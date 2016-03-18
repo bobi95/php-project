@@ -51,8 +51,8 @@ class RolesController extends Controller {
         {
             // Options
             $options = '';
-            $options .= '<a href="' . $htmlHelper->url('edit', 'users', ['id' => $role->getId()]) . '">Редактирай</а> ';
-            $options .= '<a href="' . $htmlHelper->url('delete', 'users', ['id' => $role->getId()]) . '">Изтриване</а>';
+            $options .= '<a href="' . $htmlHelper->url('edit', 'roles', ['id' => $role->getId()]) . '">Редактирай</а> ';
+            $options .= '<a class="delete-button" href="javascript:void(0);" data-href="' . $htmlHelper->url('delete', 'roles', ['id' => $role->getId()]) . '">Изтриване</а>';
 
             // Group data
             $rolesData[] = [
@@ -106,6 +106,68 @@ class RolesController extends Controller {
 
         $role->setId(0);
         $repo->save($role);
+
+        return $this->redirectToAction('index', 'roles');
+    }
+
+    public function edit($id)
+    {
+        if (!AuthenticationService::isUserLogged()) {
+            return $this->redirectToAction('login', 'account');
+        }
+
+        $repo = new RoleRepository();
+
+        /** @var Role $role */
+        $role = $repo->getById($id);
+
+        if (!$role) {
+            return $this->redirectToAction('index', 'roles');
+        }
+
+        if (HttpContext::instance()->requestMethod() === 'GET') {
+            return $this->view(['role' => $role]);
+        }
+
+        $newName = Input::post('name');
+
+        $role->setName(Input::post('name'));
+
+        if (!$role->isValid()) {
+            return $this->view(['role' => $role]);
+        }
+
+        // Check for duplicates in the DB
+        if ($newName != $role->getName() && $repo->count(['like' => ['name' => $newName]]))
+        {
+            $role->setError('name', 'Ролята вече съществува в базата!');
+        }
+
+        if (!empty($role->getAllErrors())) {
+            return $this->view(['role' => $role]);
+        }
+
+        $repo->save($role);
+
+        return $this->redirectToAction('index', 'roles');
+    }
+
+    public function delete($id)
+    {
+        if (!AuthenticationService::isUserLogged()) {
+            return $this->redirectToAction('login', 'account');
+        }
+
+        $repo = new RoleRepository();
+
+        /** @var Role $role */
+        $role = $repo->getById($id);
+
+        if (!$role) {
+            return $this->redirectToAction('index', 'roles');
+        }
+
+        $repo->delete($role);
 
         return $this->redirectToAction('index', 'roles');
     }
