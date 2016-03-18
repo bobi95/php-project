@@ -74,7 +74,7 @@ class UsersController extends Controller {
         $response = [
             'draw'				=> $data->getRequestId(),
             'recordsTotal'		=> $count,
-            'recordsFiltered'	=> $count,
+            'recordsFiltered'	=> count($users),
             'data'				=> $usersData,
         ];
 
