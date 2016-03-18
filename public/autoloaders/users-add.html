@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+</head>
+<body>
+	<form class="navbar-form navbar-left" role="search">
+	<fieldset>
+	  <legend>Добавяне на потребител</legend>
+	  	<div class="form-group">
+	  		<label for="username">Потребителско име:</label><input type="text" class="form-control" placeholder="Потребителско име" id="username"><br />
+	  		<label for="first_name">Собствено име:</label><input type="text" class="form-control" placeholder="Собствено име" id="first_name"><br />
+	  		<label for="last_name">Фамилия:</label><input type="text" class="form-control" placeholder="Фамилия" id="last_name"><br />
+	  		<label for="password">Парола:</label><input type="password" class="form-control" placeholder="Парола" id="password"><br />
+	  		<label for="password_repeat">Повторете паролата:</label><input type="password" class="form-control" placeholder="Повторете паролата" id="password_repeat"><br />
+	  		<label for="email">Имейл:</label><input type="email" class="form-control" placeholder="Имейл" id="email"><br />
+	  		<label for="role">Роля:</label>
+	    	<select name="role"><br />
+			  <option value="admin">Администратор</option>			  
+			</select><br />
+	  	</div>
+	  	<br>
+  		<button type="submit" class="btn btn-default">Откажи</button>
+  		<button type="submit" class="btn btn-default">Добави</button>
+  	</fieldset>
+	</form>
+</body>
+</html>

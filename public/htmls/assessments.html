@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+</head>
+<body class="container">
+	<form class="form-horizontal">
+		<fieldset>
+		  <legend>Оценки</legend>
+		  	<div class="form-group">
+		    	<label for="name" class="col-md-2">Име:</label>
+		    	<div class="col-md-10">
+		    		<input type="text" class="form-control" placeholder="Име" id="name">
+		    	</div>
+		    </div>
+		    <div class="form-group">
+		    	<label for="discipline" class="col-md-2">Дисциплина:</label>
+		    	<div class="col-md-10">
+			    	<select name="discipline" class="form-control">
+					  <option value="maths">Математика</option>			  
+					</select>
+				</div>
+		  	</div>
+		  	<div class="form-group">
+			  	<div class="col-sm-offset-2 col-sm-10">
+		  			<button type="submit" class="btn btn-default">Търсене</button>
+		  		</div>
+	  		</div>
+	  	</fieldset>
+	</form>
+
+	<table class="table table-bordered table-hover">
+		<tr>
+			<td>#</td>
+			<td>Име, фамилия</td>
+			<td>Дисциплина</td>
+			<td>Оценка</td>
+			<td>Операции</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</table>
+		<nav>
+		<ul class="pager">
+			<li class="previous"><a href="#"><span aria-hidden="true">&larr;</span>Първа</a></li>
+			<li class="previous"><a href="#"><span aria-hidden="true">&larr;</span>Предишна</a></li>
+    		<li class="next"><a href="#">Следваща<span aria-hidden="true">&rarr;</span></a></li>
+    		<li class="next"><a href="#">Последна<span aria-hidden="true">&rarr;</span></a></li>
+		</ul>
+	</nav>
+</body>
+</html>

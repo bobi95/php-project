@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+</head>
+<body class="container">
+	<form class="form-horizontal">
+		<fieldset>
+		  <legend>Добавяне на потребител</legend>
+		  	<div class="form-group">
+		  		<label for="username" class="col-md-2">Потребителско име:</label>
+		  		<div class="col-md-10">
+		  			<input type="text" class="form-control" placeholder="Потребителско име" id="username">
+	  			</div>
+	  		</div>
+	  		<div class="form-group">
+		  		<label for="first_name" class="col-md-2">Собствено име:</label>
+		  		<div class="col-md-10">
+		  			<input type="text" class="form-control" placeholder="Собствено име" id="first_name">
+	  			</div>
+	  		</div>
+	  		<div class="form-group">
+		  		<label for="last_name" class="col-md-2">Фамилия:</label>
+		  		<div class="col-md-10">
+		  			<input type="text" class="form-control" placeholder="Фамилия" id="last_name">
+	  			</div>
+	  		</div>
+	  		<div class="form-group">
+		  		<label for="password" class="col-md-2">Парола:</label>
+		  		<div class="col-md-10">
+		  			<input type="password" class="form-control" placeholder="Парола" id="password">
+	  			</div>
+	  		</div>
+	  		<div class="form-group">
+		  		<label for="password_repeat" class="col-md-2">Повторете паролата:</label>
+		  		<div class="col-md-10">
+		  			<input type="password" class="form-control" placeholder="Повторете паролата" id="password_repeat">
+	  			</div>
+	  		</div>
+	  		<div class="form-group">
+		  		<label for="email" class="col-md-2">Имейл:</label>
+		  		<div class="col-md-10">
+		  			<input type="email" class="form-control" placeholder="Имейл" id="email">
+	  			</div>
+	  		</div>
+	  		<div class="form-group">
+		  		<label for="role" class="col-md-2">Роля:</label>
+		  		<div class="col-md-10">
+		    		<select name="role" class="form-control">
+						<option value="admin">Администратор</option>			  
+					</select>
+				</div>
+		  	</div>
+		  	<div class="form-group">
+			  	<div class="col-sm-offset-2 col-sm-10">
+			  		<button type="submit" class="btn btn-default">Откажи</button>
+			  		<button type="submit" class="btn btn-default">Добави</button>
+		  		</div>
+	  		</div>
+	  	</fieldset>
+	</form>
+</body>
+</html>
