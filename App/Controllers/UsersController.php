@@ -121,7 +121,6 @@ class UsersController extends Controller {
         }
 
         if (!empty($model->getAllErrors())) {
-            var_dump_pre($model->getAllErrors());
             return $this->view(['user' => $model, 'roles' => $roles]);
         }
 
