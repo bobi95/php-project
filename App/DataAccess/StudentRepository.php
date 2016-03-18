@@ -36,6 +36,7 @@ class StudentRepository extends BaseRepository {
      */
     protected function getKeyValues($entity) {
         return [
+            ':id' => $entity->getId(),
             'course_id' => $entity->getCourseId(),
             'specialty_id' => $entity->getSpecialtyId(),
             'education_type_id' => $entity->getEducationTypeId(),

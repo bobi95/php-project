@@ -105,9 +105,11 @@ abstract class BaseRepository {
     }
 
     protected function insert(BaseModel $entity) {
+        $kv = $this->getKeyValues($entity);
+        unset($kv[':id']);
         $this->_db->nonQuery(
             $this->prepareInsertQuery($this->getProperties()),
-            $this->getKeyValues($entity));
+            $kv);
 
         $entity->setId($this->_db->lastInsertedId());
     }

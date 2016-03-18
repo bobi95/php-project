@@ -28,6 +28,7 @@ class SpecialtyRepository extends BaseRepository {
      */
     protected function getKeyValues($entity) {
         return [
+            ':id' => $entity->getId(),
             ':name' => $entity->getName(),
             ':short_name' => $entity->getShortName()
         ];

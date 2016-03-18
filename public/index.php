@@ -11,7 +11,6 @@ if (empty($repo->getAll())) {
     $user = new \App\Models\User();
     $user->setUsername('useradmin');
     $user->setFirstName('Admin');
-    $user->setMiddleName('Admin');
     $user->setLastName('Admin');
     $user->setPassword(\App\Helpers\Hash::create('pass1234'));
     $user->setEmail('admin@admin.com');
@@ -21,7 +20,6 @@ if (empty($repo->getAll())) {
     $user = new \App\Models\User();
     $user->setUsername('useradmin2');
     $user->setFirstName('Admin2');
-    $user->setMiddleName('Admin2');
     $user->setLastName('Admin2');
     $user->setPassword(\App\Helpers\Hash::create('pass1234'));
     $user->setEmail('admin2@admin.com');

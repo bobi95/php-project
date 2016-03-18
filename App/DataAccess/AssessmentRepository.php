@@ -31,6 +31,7 @@ class AssessmentRepository extends BaseRepository {
      */
     protected function getKeyValues($entity) {
         return [
+            ':id' => $entity->getId(),
             ':student_id' => $entity->getStudentId(),
             ':subject_id' => $entity->getSubjectId(),
             ':grade' => $entity->getGrade(),
