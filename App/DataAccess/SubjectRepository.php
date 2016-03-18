@@ -29,6 +29,7 @@ class SubjectRepository extends BaseRepository {
      */
     protected function getKeyValues($entity) {
         return [
+            ':id' => $entity->getId(),
             ':name' => $entity->getName(),
             ':lectures' => $entity->getLectures(),
             ':exercises' => $entity->getExercises()

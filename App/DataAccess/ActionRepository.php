@@ -28,6 +28,7 @@ class ActionRepository extends BaseRepository {
      */
     protected function getKeyValues($entity) {
         return [
+            ':id' => $entity->getId(),
             ':controller_id' => $entity->getControllerId(),
             ':name' => $entity->getName()
         ];
