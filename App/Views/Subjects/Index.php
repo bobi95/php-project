@@ -1,7 +1,7 @@
 <?php
-$viewData['title'] = 'Subjects';
+$viewData['title'] = 'Дисциплини';
 ?>
-<h3>Roles</h3> <?php $html->link('Add subject', 'create', 'subjects') ?>
+<h3>Дисциплини</h3> <?php $html->link('Добави дисциплина', 'create', 'subjects') ?>
 <hr>
 
 <table id="subjects-table" class="table">

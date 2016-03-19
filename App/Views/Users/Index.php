@@ -1,7 +1,7 @@
 <?php
-$viewData['title'] = 'Users';
+$viewData['title'] = 'Потребители';
 ?>
-<h3>Users</h3> <?php $html->link('Create User', 'create', 'users') ?>
+<h3>Потребители</h3> <?php $html->link('Добави потребител', 'create', 'users') ?>
 <hr>
 <table class="table table-hover" id="user-table">
     <thead>

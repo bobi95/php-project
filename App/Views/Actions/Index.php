@@ -29,7 +29,7 @@ $viewData['title'] = 'Екшъни';
                     <p>Сигурни ли сте, че искате да изтриете този екшън?</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Цъ</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Не</button>
                     <button type="button" class="btn btn-primary" id="confirm-deletion">Да</button>
                 </div>
             </div><!-- /.modal-content -->

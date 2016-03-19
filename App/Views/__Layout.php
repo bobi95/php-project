@@ -34,7 +34,7 @@
             <ul class="nav navbar-nav">
                 <li><?php $html->link("Home", "index", "home") ?></li>
                 <li><?php $html->link("Courses", "index", "courses") ?></li>
-                <li><?php $html->link("Specialities", "index", "specialities") ?></li>
+                <li><?php $html->link("Specialties", "index", "specialties") ?></li>
                 <li><?php $html->link("Subjects", "index", "subjects") ?></li>
                 <li><?php $html->link("Students", "index", "students") ?></li>
                 <li><?php $html->link("Assessments", "index", "assessments") ?></li>

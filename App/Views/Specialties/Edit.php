@@ -1,5 +1,5 @@
 <?php
-    $viewData['title'] = 'Edit Specialty';
+    $viewData['title'] = 'Редактиране на специалност';
 
 /** @var \App\Models\Specialty $specialty */
 $specialty = $model['specialty'];
@@ -12,14 +12,14 @@ $specialty = $model['specialty'];
             <label for="name" class="col-md-2">Име:</label>
             <div class="col-md-10">
                 <input type="text" class="form-control" placeholder="Име" id="name" name="name" value="<?=escape($specialty->getName())?>">
-                <?=$html->formError($specialty->getError('name')) ?>
+                <?php $html->formError($specialty->getError('name')) ?>
             </div>
         </div>
         <div class="form-group<?php if ($specialty->getError('short_name')) echo ' has-error'; ?>">
             <label for="short_name" class="col-md-2">Късо име:</label>
             <div class="col-md-10">
                 <input type="text" class="form-control" placeholder="Късо име" id="short_name" name="short_name" value="<?=escape($specialty->getShortName())?>">
-                <?=$html->formError($specialty->getError('short_name')) ?>
+                <?php $html->formError($specialty->getError('short_name')) ?>
             </div>
         </div>
         <div class="form-group">

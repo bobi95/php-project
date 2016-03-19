@@ -1,7 +1,7 @@
 <?php
-$viewData['title'] = 'Specialties';
+$viewData['title'] = 'Специалности';
 ?>
-    <h3>Users</h3> <?php $html->link('Create Specialty', 'create', 'specialties') ?>
+    <h3>Специалности</h3> <?php $html->link('Добави специалност', 'create', 'specialties') ?>
     <hr>
     <table class="table table-hover" id="specialties-table">
         <thead>
@@ -28,7 +28,7 @@ $viewData['title'] = 'Specialties';
                     <p>Сигурни ли сте, че искате да изтриете тази специалност?</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Цъ</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Не</button>
                     <button type="button" class="btn btn-primary" id="confirm-deletion">Да</button>
                 </div>
             </div><!-- /.modal-content -->

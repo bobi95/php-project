@@ -1,5 +1,5 @@
 <?php
-    $viewData['title'] = 'Create Subject';
+    $viewData['title'] = 'Редактиране на дисциплина';
 
     /** @var \App\Helpers\Html $html */
     /** @var \App\Models\Subject $subject */
@@ -9,7 +9,7 @@ $subject = $model['subject'];
 ?>
 <form class="form-horizontal" method="post" action="">
     <fieldset>
-        <legend>Добавяне на дисциплина</legend>
+        <legend>Редактиране на дисциплина</legend>
         <input type="hidden" name="id" value="<?=$subject->getId()?>">
         <div class="form-group<?php if ($subject->getError('name')) echo ' has-error'; ?>">
             <label for="name" class="col-md-2">Име:</label>

@@ -12,7 +12,7 @@ $course = $model['course'];
 	    	<label for="name" class="col-md-2">Име на курс:</label>
 	    	<div class="col-md-10">
 	    		<input type="text" class="form-control" placeholder="Име" id="name" name="name" value="<?=escape($course->getName())?>">
-	    		<?=$html->formError($course->getError('name')) ?>
+	    		<?php $html->formError($course->getError('name')) ?>
 	    	</div>
 	  	</div>
 	  	<div class="form-group">

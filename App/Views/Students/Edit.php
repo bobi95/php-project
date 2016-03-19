@@ -17,7 +17,7 @@ $student = $model['student'];
                     <option value="<?=$course->getId()?>"<?php if ($course->getId() === $course_id) echo " selected"; ?>><?=$course->getName()?></option>
                 <?php } ?>
                 </select>
-                <?=$html->formError($student->getError('course_id')) ?>
+                <?php $html->formError($student->getError('course_id')) ?>
             </div>
         </div>
         <div class="form-group<?php if ($student->getError('specialty_id')) echo ' has-error'; ?>">
@@ -30,7 +30,7 @@ $student = $model['student'];
                     <option value="<?=$specialty->getId()?>"<?php if ($specialty->getId() === $specialty_id) echo " selected"; ?>><?=$specialty->getName()?></option>
                 <?php } ?>
                 </select>
-                <?=$html->formError($student->getError('specialty_id')) ?>
+                <?php $html->formError($student->getError('specialty_id')) ?>
             </div>
         </div>
         <div class="form-group<?php if ($student->getError('education_type_id')) echo ' has-error'; ?>">
@@ -44,7 +44,7 @@ $student = $model['student'];
                                 <option value="<?=$eType->getId()?>"<?php if ($eType->getId() === $education_type_id) echo " selected"; ?>><?=$eType->getName()?></option>
                     <?php } ?>
                 </select>
-                <?=$html->formError($student->getError('education_type_id')) ?>
+                <?php $html->formError($student->getError('education_type_id')) ?>
             </div>
         </div>
 
@@ -52,7 +52,7 @@ $student = $model['student'];
             <label for="faculty_number" class="col-md-2">Факултетен номер:</label>
             <div class="col-md-10">
                 <input type="text" class="form-control" placeholder="Потребителско име" id="faculty_number" name="faculty_number" value="<?=escape($student->getFacultyNumber())?>">
-                <?=$html->formError($student->getError('faculty_number')) ?>
+                <?php $html->formError($student->getError('faculty_number')) ?>
             </div>
         </div>
         <div class="form-group">

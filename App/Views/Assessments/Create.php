@@ -11,7 +11,7 @@ $assessment = $model['assessment'];
 	    	<label for="name" class="col-md-2">Име на оценка:</label>
 	    	<div class="col-md-10">
 	    		<input type="text" class="form-control" placeholder="Име" id="name" name="name" value="<?=escape($assessment->getName())?>">
-	    		<?=$html->formError($assessment->getError('name')) ?>
+	    		<?php $html->formError($assessment->getError('name')) ?>
 	    	</div>
 	  	</div>
 	  	<div class="form-group">

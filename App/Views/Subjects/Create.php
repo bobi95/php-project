@@ -1,5 +1,5 @@
 <?php
-    $viewData['title'] = 'Create Subject';
+    $viewData['title'] = 'Добави дисциплина';
 
     /** @var \App\Helpers\Html $html */
     /** @var \App\Models\Subject $subject */
