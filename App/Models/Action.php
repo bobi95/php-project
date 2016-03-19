@@ -1,5 +1,7 @@
 <?php namespace App\Models;
 
+use App\DataAccess\ControllerRepository;
+
 class Action extends BaseModel {
 
     private $controller_id;
@@ -19,6 +21,14 @@ class Action extends BaseModel {
 
     public function setName($action){
         $this->name = (string)$action;
+    }
+
+
+    /**
+     * @return Controller
+     */
+    public function getController() {
+        return (new ControllerRepository())->getById($this->getControllerId());
     }
 
     protected function validate()
