@@ -23,10 +23,6 @@ class EducationTypesController extends Controller {
         return $this->view();
     }
 
-    public function create() {
-        return $this->view(['educationType' => new EducationType()]);
-    }
-
     public function listeducationTypes()
     {
         $data = new DataTablesParser($_POST);
@@ -53,13 +49,13 @@ class EducationTypesController extends Controller {
 
         $htmlHelper = new Html();
 
-        /** @var User $user */
+        /** @var EducationType $educationType */
         foreach ($educationTypes as $educationType)
         {
             // Options
             $options = '';
             $options .= '<a href="' . $htmlHelper->url('edit', 'educationTypes', ['id' => $educationType->getId()]) . '">Редактирай</а> ';
-            $options .= '<a href="' . $htmlHelper->url('delete', 'educationTypes', ['id' => $educationType->getId()]) . '">Изтриване</а>';
+            $options .= '<a class="delete-button" href="javascript:void(0);" data-href="' . $htmlHelper->url('delete', 'educationTypes', ['id' => $educationType->getId()]) . '">Изтриване</а>';
 
             // Group data
             $educationTypesData[] = [
@@ -83,171 +79,89 @@ class EducationTypesController extends Controller {
         exit;
     }
 
-    // public function create() {
+    public function create() {
 
-    //     if (!AuthenticationService::isUserLogged()) {
-    //         return $this->redirectToAction('login', 'account');
-    //     }
+        if (!AuthenticationService::isUserLogged()) {
+            return $this->redirectToAction('login', 'account');
+        }
 
-    //     $roles = (new RoleRepository())->getAll();
+        if (HttpContext::instance()->requestMethod() === 'GET') {
+            return $this->view(['educationType' => new EducationType()]);
+        }
 
-    //     if (HttpContext::instance()->requestMethod() === 'GET') {
-    //         return $this->view(['user' => new User(), 'roles' => $roles]);
-    //     }
+        $model = new EducationType();
+        self::bindEducationType($model);
 
-    //     $model = new User();
-    //     self::bindUser($model);
+        if (!$model->isValid()) {
+            return $this->view(['educationType' => $model]);
+        }
 
-    //     if ($model->getPassword() !== Input::post('password_repeat')) {
-    //         $model->setError('password_repeat', 'Passwords don\'t match.');
-    //     }
+        $repo = new EducationTypeRepository();
 
-    //     if (!$model->isValid()) {
-    //         return $this->view(['user' => $model, 'roles' => $roles ]);
-    //     }
+        $repo->save($model);
 
-    //     $repo = new UserRepository();
+        return $this->redirectToAction('index', 'educationTypes');
+    }
 
-    //     $user = $repo->getUserByUsername($model->getUsername());
+    public function edit($id) {
 
+        if (!AuthenticationService::isUserLogged()) {
+            return $this->redirectToAction('login', 'account');
+        }
 
-    //     if ($user) {
-    //         $model->setError('username', 'Username already in use.');
-    //     }
+        $repo = new EducationTypeRepository();
 
-    //     $user = $repo->getUserByEmail($model->getEmail());
+        if (HttpContext::instance()->requestMethod() === 'GET') {
+            $model = $repo->getById($id);
 
-    //     if ($user) {
-    //         $model->setError('email', 'Email already in use.');
-    //     }
+            if (!$model) {
+                return $this->redirectToAction('index', 'educationTypes');
+            }
 
-    //     if (!empty($model->getAllErrors())) {
-    //         var_dump_pre($model->getAllErrors());
-    //         return $this->view(['user' => $model, 'roles' => $roles]);
-    //     }
+            return $this->view(['educationType' => $model]);
+        }
 
-    //     $model->setPassword(Hash::create($model->getPassword()));
+        $model = new EducationType();
+        self::bindEducationType($model);
 
-    //     $model->setId(0);
-    //     $repo->save($model);
+        if (!$model->isValid()) {
+            return $this->view(['educationType' => $model]);
+        }
 
-    //     return $this->redirectToAction('index', 'users');
-    // }
+        $educationType = $repo->getById($model->getId());
 
-    // public function edit($id) {
+        if (!$educationType) {
+            return $this->redirectToAction('index', 'educationTypes');
+        }
 
-    //     if (!AuthenticationService::isUserLogged()) {
-    //         return $this->redirectToAction('login', 'account');
-    //     }
+        $repo->save($model);
 
-    //     $roles = (new RoleRepository())->getAll();
+        return $this->redirectToAction('index', 'educationTypes');
+    }
 
-    //     $repo = new UserRepository();
+    public function delete($id) {
 
-    //     if (HttpContext::instance()->requestMethod() === 'GET') {
-    //         $user = $repo->getById($id);
+        if (!AuthenticationService::isUserLogged()) {
+            return $this->redirectToAction('login', 'account');
+        }
 
-    //         if (!$user) {
-    //             return $this->redirectToAction('index', 'users');
-    //         }
+        $repo = new EducationTypeRepository();
 
-    //         return $this->view(['user' => $user, 'roles' => $roles]);
-    //     }
+        /** @var EducationType $educationType */
+        $educationType = $repo->getById($id);
 
-    //     $model = new User();
-    //     self::bindUser($model);
+        if (!$educationType) {
+            return $this->redirectToAction('index', 'educationTypes');
+        }
 
-    //     if ($model->getPassword() !== Input::post('password_repeat')) {
-    //         $model->setError('password_repeat', 'Passwords don\'t match.');
-    //     }
+        $repo->delete($educationType);
 
-    //     if (!$model->isValid()) {
-    //         return $this->view(['user' => $model, 'roles' => $roles ]);
-    //     }
+        return $this->redirectToAction('index', 'educationTypes');
+    }
 
-    //     $user = $repo->getById($model->getId());
-
-    //     if (!$user) {
-    //         return $this->redirectToAction('index', 'users');
-    //     }
-
-    //     if ($model->getUsername() !== $user->getUsername()) {
-    //         $newuser = $repo->getUserByUsername($model->getUsername());
-
-    //         if ($newuser) {
-    //             $model->setError('username', 'Username already in use');
-    //         }
-    //     }
-
-    //     if ($model->getEmail() !== $user->getEmail()) {
-    //         $newuser = $repo->getUserByEmail($model->getEmail());
-
-    //         if ($newuser) {
-    //             $model->setError('email', 'Email already in use');
-    //         }
-    //     }
-
-    //     if (!Hash::verify($model->getPassword(), $user->getPassword())) {
-    //         $model->setError('password', 'Wrong password');
-    //     }
-
-    //     if (!empty($model->getAllErrors())) {
-    //         return $this->view(['user' => $model, 'roles' => $roles]);
-    //     }
-
-    //     $model->setPassword($user->getPassword());
-    //     $repo->save($model);
-
-    //     return $this->redirectToAction('index', 'users');
-    // }
-    
-    /**
-     * Bind the user to the post input
-     * @param \App\Models\User $model
-     */
-    // private static function bindUser($model) {
-    //     $model->setId(Input::post('id'));
-    //     $model->setFirstName(Input::post('first_name'));
-    //     $model->setLastName(Input::post('last_name'));
-    //     $model->setPassword(Input::post('password'));
-    //     $model->setUsername(Input::post('username'));
-    //     $model->setEmail(Input::post('email'));
-    //     $model->setRoleId(Input::post('role_id'));
-    // }
-
-//    public function Create() {
-//        $model = new User();
-//
-//        $session = Session::instance();
-//
-//        if ($this->context()->requestMethod() !== 'POST') {
-//            return $this->view($model);
-//        }
-//        self::bindUser($model);
-//
-//        $model->isValid();
-//        $userRepo = new UserRepository();
-//
-//        if(!$model->getError('username')) {
-//            $user = $userRepo->getByUsername($model->getUsername());
-//
-//            if($user) {
-//                $model->setError('username', 'Username already in use.');
-//            }
-//        }
-//
-//        if(!$model->getError('email')) {
-//            $user = $userRepo->getByEmail($model->getEmail());
-//
-//            if($user) {
-//                $model->setError('email', 'Email already in use.');
-//            }
-//        }
-//
-//        if(empty($model->getAllErrors())) {
-//            return $this->redirectToAction('Index');
-//        }
-//
-//        return $this->view($model);
-//    }
+    private static function bindEducationType(EducationType $type) {
+        $type->setId(Input::post('id'));
+        $type->setName(Input::post('name'));
+        $type->setNumber(Input::post('number'));
+    }
 }
