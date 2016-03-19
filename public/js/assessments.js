@@ -2,16 +2,20 @@ jQuery(
 	function($)
 	{
 		// DataTables
-		window.rolesListTable = $('#roles-table').DataTable({
+		window.rolesListTable = $('#assessment-table').DataTable({
 			serverSide	: true,
-			ajax		: { url: '/Roles/listroles', type: 'POST'},
+			ajax		: { url: '/assessments/listassessments', type: 'POST'},
 			orderMulti	: false,
 			scrollX		: false,
 			ordering	: true,
 			//autoWidth	: true,
 			columns		: [
 							{name: 'id'			, data: 'id'			, searchable: false	, orderable: true},
-							{name: 'name'		, data: 'name'			, searchable: true	, orderable: true},
+							{name: 'student_id'	, data: 'student_id'	, searchable: false	, orderable: true},
+							{name: 'subject_id'	, data: 'subject_id'	, searchable: false	, orderable: true},
+							{name: 'grade'		, data: 'grade'			, searchable: false	, orderable: true},
+							{name: 'lectures'	, data: 'lectures'		, searchable: false	, orderable: true},
+							{name: 'exercises'	, data: 'exercises'		, searchable: false	, orderable: true},
 							{name: 'options'	, data: 'options'		, searchable: false	, orderable: false}
 						]
 		});
