@@ -2,19 +2,11 @@
     $viewData['title'] = 'Create Student';
 
 /** @var \App\Models\Student $student */
-$user = $model['user'];
+$student = $model['student'];
 ?>
 <form class="form-horizontal" method="post" action="">
     <fieldset>
         <legend>Добавяне на потребител</legend>
-        <div class="form-group<?php if ($student->getError('faculty_number')) echo ' has-error'; ?>">
-            <label for="faculty_number" class="col-md-2">Факултетен номер:</label>
-            <div class="col-md-10">
-                <input type="text" class="form-control" placeholder="Потребителско име" id="faculty_number" name="faculty_number" value="<?=escape($student->getFacultyNumber())?>">
-                <?=$html->formError($student->getError('faculty_number')) ?>
-            </div>
-        </div>
-
         <div class="form-group<?php if ($student->getError('course_id')) echo ' has-error'; ?>">
             <label for="course_id" class="col-md-2">Курс:</label>
             <div class="col-md-10">
@@ -26,6 +18,27 @@ $user = $model['user'];
                 <?php } ?>
                 </select>
                 <?=$html->formError($student->getError('course_id')) ?>
+            </div>
+        </div>
+        <div class="form-group<?php if ($student->getError('specialty_id')) echo ' has-error'; ?>">
+            <label for="specialty_id" class="col-md-2">Специалност:</label>
+            <div class="col-md-10">
+                <select name="specialty_id" id="specialty_id" class="form-control">
+                    <?php
+                    $specialty_id = $student->getSpecialtyId();
+                    foreach ($model['specialties'] as $specialty) { ?>
+                    <option value="<?=$specialty->getId()?>"<?php if ($specialty->getId() === $specialty_id) echo " selected"; ?>><?=$specialty->getName()?></option>
+                <?php } ?>
+                </select>
+                <?=$html->formError($student->getError('specialty_id')) ?>
+            </div>
+        </div>
+
+        <div class="form-group<?php if ($student->getError('faculty_number')) echo ' has-error'; ?>">
+            <label for="faculty_number" class="col-md-2">Факултетен номер:</label>
+            <div class="col-md-10">
+                <input type="text" class="form-control" placeholder="Потребителско име" id="faculty_number" name="faculty_number" value="<?=escape($student->getFacultyNumber())?>">
+                <?=$html->formError($student->getError('faculty_number')) ?>
             </div>
         </div>
         <div class="form-group">

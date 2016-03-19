@@ -4,16 +4,16 @@ jQuery(
 		// DataTables
 		window.rolesListTable = $('#students-table').DataTable({
 			serverSide	: true,
-			ajax		: { url: '/Subjects/liststudents', type: 'POST'},
+			ajax		: { url: '/students/liststudents', type: 'POST'},
 			orderMulti	: false,
 			scrollX		: false,
 			ordering	: true,
 			//autoWidth	: true,
 			columns		: [
 							{name: 'id'					, data: 'id'					, searchable: false	, orderable: true},
-							{name: 'course_id'			, data: 'course_id'				, searchable: true	, orderable: true},
-							{name: 'specialty_id'		, data: 'specialty_id'			, searchable: true	, orderable: true},
-							{name: 'education_type_id'	, data: 'education_type_id'		, searchable: true	, orderable: true},
+							{name: 'course_id'			, data: 'course_id'				, searchable: false	, orderable: true},
+							{name: 'specialty_id'		, data: 'specialty_id'			, searchable: false	, orderable: true},
+							{name: 'education_type_id'	, data: 'education_type_id'		, searchable: false	, orderable: true},
 							{name: 'faculty_number'		, data: 'faculty_number'		, searchable: true	, orderable: true},
 							{name: 'options'			, data: 'options'				, searchable: false	, orderable: false}
 						]

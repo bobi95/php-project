@@ -1,7 +1,7 @@
 <?php
 $viewData['title'] = 'Students';
 ?>
-<h3>Студенти</h3> <?php $html->link('Add student', 'create', 'student') ?>
+<h3>Студенти</h3> <?php $html->link('Add student', 'create', 'students') ?>
 <hr>
 
 <table id="students-table" class="table">

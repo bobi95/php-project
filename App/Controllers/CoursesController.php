@@ -23,9 +23,9 @@ class CoursesController extends Controller {
         return $this->view();
     }
 
-    public function create() {
-        return $this->view(['course' => new Course()]);
-    }
+    // public function create() {
+    //     return $this->view(['course' => new Course()]);
+    // }
 
     public function listcourses()
     {
@@ -59,12 +59,12 @@ class CoursesController extends Controller {
             // Options
             $options = '';
             $options .= '<a href="' . $htmlHelper->url('edit', 'courses', ['id' => $course->getId()]) . '">Редактирай</а> ';
-            $options .= '<a href="' . $htmlHelper->url('delete', 'courses', ['id' => $course->getId()]) . '">Изтриване</а>';
+            $options .= '<a class="delete-button" href="javascript:void(0);" data-href="' . $htmlHelper->url('delete', 'courses', ['id' => $course->getId()]) . '">Изтриване</а>';
 
             // Group data
             $coursesData[] = [
                 'id'          => $course->getId(),
-                'name'	      => $course->getName(),                
+                'name'	      => $course->getName(),
                 'options'     => $options,
             ];
         }
@@ -82,171 +82,100 @@ class CoursesController extends Controller {
         exit;
     }
 
-    // public function create() {
+    public function create() {
 
-    //     if (!AuthenticationService::isUserLogged()) {
-    //         return $this->redirectToAction('login', 'account');
-    //     }
+        if (!AuthenticationService::isUserLogged()) {
+            return $this->redirectToAction('login', 'account');
+        }
 
-    //     $roles = (new RoleRepository())->getAll();
+        $course = new Course();
 
-    //     if (HttpContext::instance()->requestMethod() === 'GET') {
-    //         return $this->view(['user' => new User(), 'roles' => $roles]);
-    //     }
+        if (HttpContext::instance()->requestMethod() === 'GET') {
+            return $this->view(['course' => $course]);
+        }
 
-    //     $model = new User();
-    //     self::bindUser($model);
+        $course->setName(Input::post('name'));
 
-    //     if ($model->getPassword() !== Input::post('password_repeat')) {
-    //         $model->setError('password_repeat', 'Passwords don\'t match.');
-    //     }
+        if (!$course->isValid()) {
+            return $this->view(['course' => $course]);
+        }
 
-    //     if (!$model->isValid()) {
-    //         return $this->view(['user' => $model, 'roles' => $roles ]);
-    //     }
+        $repo = new CourseRepository();
 
-    //     $repo = new UserRepository();
+        if ($repo->count(['like' => ['name' => $course->getName()]]))
+        {
+            $course->setError('name', 'Курс с такова име вече същестува!');
+        }
 
-    //     $user = $repo->getUserByUsername($model->getUsername());
+        if (!empty($course->getAllErrors())) {
+            return $this->view(['course' => $course]);
+        }
 
+        $course->setId(0);
+        $repo->save($course);
 
-    //     if ($user) {
-    //         $model->setError('username', 'Username already in use.');
-    //     }
+        return $this->redirectToAction('index', 'courses');
+    }
 
-    //     $user = $repo->getUserByEmail($model->getEmail());
+    public function edit($id) {
 
-    //     if ($user) {
-    //         $model->setError('email', 'Email already in use.');
-    //     }
+        if (!AuthenticationService::isUserLogged()) {
+            return $this->redirectToAction('login', 'account');
+        }
 
-    //     if (!empty($model->getAllErrors())) {
-    //         var_dump_pre($model->getAllErrors());
-    //         return $this->view(['user' => $model, 'roles' => $roles]);
-    //     }
+        $repo = new CourseRepository();
 
-    //     $model->setPassword(Hash::create($model->getPassword()));
+        /** @var Role $role */
+        $course = $repo->getById($id);
 
-    //     $model->setId(0);
-    //     $repo->save($model);
+        if (!$course) {
+            return $this->redirectToAction('index', 'courses');
+        }
 
-    //     return $this->redirectToAction('index', 'users');
-    // }
+        if (HttpContext::instance()->requestMethod() === 'GET') {
+            return $this->view(['course' => $course]);
+        }
 
-    // public function edit($id) {
+        $newName = Input::post('name');
 
-    //     if (!AuthenticationService::isUserLogged()) {
-    //         return $this->redirectToAction('login', 'account');
-    //     }
+        $course->setName(Input::post('name'));
 
-    //     $roles = (new RoleRepository())->getAll();
+        if (!$course->isValid()) {
+            return $this->view(['course' => $course]);
+        }
 
-    //     $repo = new UserRepository();
+        // Check for duplicates in the DB
+        if ($newName != $course->getName() && $repo->count(['like' => ['name' => $newName]]))
+        {
+            $course->setError('name', 'Курсът вече съществува в базата!');
+        }
 
-    //     if (HttpContext::instance()->requestMethod() === 'GET') {
-    //         $user = $repo->getById($id);
+        if (!empty($course->getAllErrors())) {
+            return $this->view(['course' => $course]);
+        }
 
-    //         if (!$user) {
-    //             return $this->redirectToAction('index', 'users');
-    //         }
+        $repo->save($course);
 
-    //         return $this->view(['user' => $user, 'roles' => $roles]);
-    //     }
+        return $this->redirectToAction('index', 'courses');
+    }
 
-    //     $model = new User();
-    //     self::bindUser($model);
+    public function delete($id)
+    {
+        if (!AuthenticationService::isUserLogged()) {
+            return $this->redirectToAction('login', 'account');
+        }
 
-    //     if ($model->getPassword() !== Input::post('password_repeat')) {
-    //         $model->setError('password_repeat', 'Passwords don\'t match.');
-    //     }
+        $repo = new CourseRepository();
 
-    //     if (!$model->isValid()) {
-    //         return $this->view(['user' => $model, 'roles' => $roles ]);
-    //     }
+        /** @var Role $role */
+        $course = $repo->getById($id);
 
-    //     $user = $repo->getById($model->getId());
+        if (!$course) {
+            return $this->redirectToAction('index', 'courses');
+        }
 
-    //     if (!$user) {
-    //         return $this->redirectToAction('index', 'users');
-    //     }
+        $repo->delete($course);
 
-    //     if ($model->getUsername() !== $user->getUsername()) {
-    //         $newuser = $repo->getUserByUsername($model->getUsername());
-
-    //         if ($newuser) {
-    //             $model->setError('username', 'Username already in use');
-    //         }
-    //     }
-
-    //     if ($model->getEmail() !== $user->getEmail()) {
-    //         $newuser = $repo->getUserByEmail($model->getEmail());
-
-    //         if ($newuser) {
-    //             $model->setError('email', 'Email already in use');
-    //         }
-    //     }
-
-    //     if (!Hash::verify($model->getPassword(), $user->getPassword())) {
-    //         $model->setError('password', 'Wrong password');
-    //     }
-
-    //     if (!empty($model->getAllErrors())) {
-    //         return $this->view(['user' => $model, 'roles' => $roles]);
-    //     }
-
-    //     $model->setPassword($user->getPassword());
-    //     $repo->save($model);
-
-    //     return $this->redirectToAction('index', 'users');
-    // }
-    
-    /**
-     * Bind the user to the post input
-     * @param \App\Models\User $model
-     */
-    // private static function bindUser($model) {
-    //     $model->setId(Input::post('id'));
-    //     $model->setFirstName(Input::post('first_name'));
-    //     $model->setLastName(Input::post('last_name'));
-    //     $model->setPassword(Input::post('password'));
-    //     $model->setUsername(Input::post('username'));
-    //     $model->setEmail(Input::post('email'));
-    //     $model->setRoleId(Input::post('role_id'));
-    // }
-
-//    public function Create() {
-//        $model = new User();
-//
-//        $session = Session::instance();
-//
-//        if ($this->context()->requestMethod() !== 'POST') {
-//            return $this->view($model);
-//        }
-//        self::bindUser($model);
-//
-//        $model->isValid();
-//        $userRepo = new UserRepository();
-//
-//        if(!$model->getError('username')) {
-//            $user = $userRepo->getByUsername($model->getUsername());
-//
-//            if($user) {
-//                $model->setError('username', 'Username already in use.');
-//            }
-//        }
-//
-//        if(!$model->getError('email')) {
-//            $user = $userRepo->getByEmail($model->getEmail());
-//
-//            if($user) {
-//                $model->setError('email', 'Email already in use.');
-//            }
-//        }
-//
-//        if(empty($model->getAllErrors())) {
-//            return $this->redirectToAction('Index');
-//        }
-//
-//        return $this->view($model);
-//    }
+        return $this->redirectToAction('index', 'courses');
+    }
 }
