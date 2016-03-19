@@ -23,9 +23,9 @@ class EducationTypesController extends Controller {
         return $this->view();
     }
 
-    public function create() {
-        return $this->view(['educationType' => new EducationType()]);
-    }
+    // public function create() {
+    //     return $this->view(['educationType' => new EducationType()]);
+    // }
 
     public function listeducationTypes()
     {
@@ -82,6 +82,130 @@ class EducationTypesController extends Controller {
         echo json_encode($response);
         exit;
     }
+
+    public function create() {
+
+        if (!AuthenticationService::isUserLogged()) {
+            return $this->redirectToAction('login', 'account');
+        }
+
+        $educationType = new EducationType();
+
+        if (HttpContext::instance()->requestMethod() === 'GET') {
+            return $this->view(['educationType' => $educationType]);
+        }
+
+        $educationType->setName(Input::post('name'));
+
+        if (!$educationType->isValid()) {
+            return $this->view(['educationType' => $educationType]);
+        }
+
+        $repo = new EducationTypeRepository();
+
+        if ($repo->count(['like' => ['name' => $educationType->getName()]])) {
+            $educationType->setError('name', 'Форма на обучение с такова име вече същестува!');
+        }
+
+
+        $educationType->setNumber(Input::post('number'));
+
+        if (!$educationType->isValid()) {
+            return $this->view(['educationType' => $educationType]);
+        }
+
+        $repo = new EducationTypeRepository();
+
+        if ($repo->count(['like' => ['number' => $educationType->getNumber()]])) {
+            $educationType->setError('number', 'Форма на обучение с такъв номер вече същестува!');
+        }
+
+        if (!empty($educationType->getAllErrors())) {
+            return $this->view(['educationType' => $educationType]);
+        }
+
+        $educationType->setId(0);
+        $repo->save($educationType);
+
+        return $this->redirectToAction('index', 'educationTypes');
+    }
+
+    public function edit($id) {
+
+        if (!AuthenticationService::isUserLogged()) {
+            return $this->redirectToAction('login', 'account');
+        }
+
+        $repo = new EducationTypeRepository();
+
+        /** @var Role $role */
+        $educationType = $repo->getById($id);
+
+        if (!$educationType) {
+            return $this->redirectToAction('index', 'educationTypes');
+        }
+
+        if (HttpContext::instance()->requestMethod() === 'GET') {
+            return $this->view(['educationType' => $educationType]);
+        }
+
+        $newName = Input::post('name');
+
+        $educationType->setName(Input::post('name'));
+
+        if (!$educationType->isValid()) {
+            return $this->view(['educationType' => $educationType]);
+        }
+
+        // Check for duplicates in the DB
+        if ($newName != $educationType->getName() && $repo->count(['like' => ['name' => $newName]]))
+        {
+            $educationType->setError('name', 'Формата на обучение вече съществува в базата!');
+        }
+
+
+        $newNumber = Input::post('number');
+
+        $educationType->setNumber(Input::post('number'));
+
+        if (!$educationType->isValid()) {
+            return $this->view(['educationType' => $educationType]);
+        }
+
+        // Check for duplicates in the DB
+        if ($newNumber != $educationType->getNumber() && $repo->count(['like' => ['number' => $newNumber]]))
+        {
+            $educationType->setError('number', 'Формата на обучение с такъв номер вече съществува в базата!');
+        }
+
+        if (!empty($educationType->getAllErrors())) {
+            return $this->view(['educationType' => $educationType]);
+        }
+
+        $repo->save($educationType);
+
+        return $this->redirectToAction('index', 'educationTypes');
+    }
+
+    public function delete($id)
+    {
+        if (!AuthenticationService::isUserLogged()) {
+            return $this->redirectToAction('login', 'account');
+        }
+
+        $repo = new EducationTypeRepository();
+
+        /** @var Role $role */
+        $educationType = $repo->getById($id);
+
+        if (!$educationType) {
+            return $this->redirectToAction('index', 'educationTypes');
+        }
+
+        $repo->delete($educationType);
+
+        return $this->redirectToAction('index', 'educationTypes');
+    }  
 
     // public function create() {
 
