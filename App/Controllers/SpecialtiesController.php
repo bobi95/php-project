@@ -10,7 +10,7 @@ use App\Helpers\Input;
 use App\Models\Specialty;
 use App\Services\AuthenticationService;
 
-class SpecialtiesController extends Controller {
+class specialtiesController extends Controller {
 
     public function index() {
         if (!AuthenticationService::isUserLogged()) {

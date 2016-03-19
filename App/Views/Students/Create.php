@@ -33,6 +33,20 @@ $student = $model['student'];
                 <?=$html->formError($student->getError('specialty_id')) ?>
             </div>
         </div>
+        <div class="form-group<?php if ($student->getError('education_type_id')) echo ' has-error'; ?>">
+            <label for="education_type_id" class="col-md-2">Форма на обучение:</label>
+            <div class="col-md-10">
+                <select name="education_type_id" id="education_type_id" class="form-control">
+                    <?php
+                        $education_type_id = $student->getSpecialtyId();
+                        /** @var \App\Models\EducationType $eType */
+                        foreach ($model['educationTypes'] as $eType) { ?>
+                                <option value="<?=$eType->getId()?>"<?php if ($eType->getId() === $education_type_id) echo " selected"; ?>><?=$eType->getName()?></option>
+                    <?php } ?>
+                </select>
+                <?=$html->formError($student->getError('education_type_id')) ?>
+            </div>
+        </div>
 
         <div class="form-group<?php if ($student->getError('faculty_number')) echo ' has-error'; ?>">
             <label for="faculty_number" class="col-md-2">Факултетен номер:</label>

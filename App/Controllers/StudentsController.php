@@ -3,6 +3,9 @@
 
 use App\Core\Controller;
 use App\Core\HttpContext;
+use App\DataAccess\CourseRepository;
+use App\DataAccess\EducationTypeRepository;
+use App\DataAccess\SpecialtyRepository;
 use App\DataAccess\StudentRepository;
 use App\Helpers\DataTablesParser;
 use App\Helpers\Html;
@@ -34,6 +37,10 @@ class StudentsController extends Controller {
             exit;
         }
 
+        $coursesRepo = new CourseRepository();
+        $specialityRepo = new SpecialtyRepository();
+        $educationTypeRepo = new EducationTypeRepository();
+
         // Build response & send to data tables
         $studentsData = [];
 
@@ -55,15 +62,15 @@ class StudentsController extends Controller {
         {
             // Options
             $options = '';
-            $options .= '<a href="' . $htmlHelper->url('edit', 'specialties', ['id' => $student->getId()]) . '">Редактирай</а> ';
-            $options .= '<a class="delete-button" href="javascript:void(0);" data-href="' . $htmlHelper->url('delete', 'specialties', ['id' => $student->getId()]) . '">Изтриване</а>';
+            $options .= '<a href="' . $htmlHelper->url('edit', 'students', ['id' => $student->getId()]) . '">Редактирай</а> ';
+            $options .= '<a class="delete-button" href="javascript:void(0);" data-href="' . $htmlHelper->url('delete', 'students', ['id' => $student->getId()]) . '">Изтриване</а>';
 
             // Group data
             $studentsData[] = [
                 'id'          => $student->getId(),
-                'course_id'	      => $student->getCourseId(),
-                'specialty_id'  => $student->getSpecialtyId(),
-                'education_type_id'  => $student->getEducationTypeId(),
+                'course_id'	      => $coursesRepo->getById($student->getCourseId())->getName(),
+                'specialty_id'  => $specialityRepo->getById($student->getSpecialtyId())->getName(),
+                'education_type_id'  => $educationTypeRepo->getById($student->getEducationTypeId())->getName(),
                 'faculty_number'  => $student->getFacultyNumber(),
                 'options'     => $options
             ];
@@ -88,20 +95,28 @@ class StudentsController extends Controller {
             return $this->redirectToAction('login', 'account');
         }
 
+        $student = new Student();
+
+        $models = [
+            'student'        => $student,
+            'courses'        => (new CourseRepository())->getAll(),
+            'specialties'    => (new SpecialtyRepository())->getAll(),
+            'educationTypes' => (new EducationTypeRepository())->getAll(),
+        ];
+
         if (HttpContext::instance()->requestMethod() === 'GET') {
-            return $this->view(['student' => new Student()]);
+            return $this->view($models);
         }
 
-        $model = new Student();
-        self::bindStudents($model);
+        self::bindStudents($student);
 
-        if (!$model->isValid()) {
-            return $this->view(['student' => $model]);
+        if (!$student->isValid()) {
+            return $this->view(['student' => $models]);
         }
 
         $repo = new StudentRepository();
 
-        $repo->save($model);
+        $repo->save($student);
 
         return $this->redirectToAction('index', 'students');
     }
@@ -114,30 +129,31 @@ class StudentsController extends Controller {
 
         $repo = new StudentRepository();
 
-        if (HttpContext::instance()->requestMethod() === 'GET') {
-            $model = $repo->getById($id);
-
-            if (!$model) {
-                return $this->redirectToAction('index', 'students');
-            }
-
-            return $this->view(['student' => $model]);
-        }
-
-        $model = new Student();
-        self::bindStudents($model);
-
-        if (!$model->isValid()) {
-            return $this->view(['student' => $model]);
-        }
-
-        $student = $repo->getById($model->getId());
+        /** @var Student $student */
+        $student = $repo->getById($id);
 
         if (!$student) {
             return $this->redirectToAction('index', 'students');
         }
 
-        $repo->save($model);
+        $models = [
+            'student'        => $student,
+            'courses'        => (new CourseRepository())->getAll(),
+            'specialties'    => (new SpecialtyRepository())->getAll(),
+            'educationTypes' => (new EducationTypeRepository())->getAll(),
+        ];
+
+        if (HttpContext::instance()->requestMethod() === 'GET') {
+            return $this->view($models);
+        }
+
+        self::bindStudents($student);
+
+        if (!$student->isValid()) {
+            return $this->view($models);
+        }
+
+        $repo->save($student);
 
         return $this->redirectToAction('index', 'students');
     }
@@ -163,7 +179,6 @@ class StudentsController extends Controller {
     }
 
     private static function bindStudents(Student $entity) {
-        $entity->setId(Input::post('id'));
         $entity->setCourseId(Input::post('course_id'));
         $entity->setSpecialtyId(Input::post('specialty_id'));
         $entity->setEducationTypeId(Input::post('education_type_id'));
