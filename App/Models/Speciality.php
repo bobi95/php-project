@@ -1,6 +1,6 @@
 <?php namespace App\Models;
 
-class Specialty extends BaseModel {
+class Speciality extends BaseModel {
 
     private $name;
     private $short_name;

@@ -6,22 +6,22 @@ class AssessmentRepository extends BaseRepository {
 
     public function __construct() {
         parent::__construct();
-        $this->_tableName = 'assessments';
+        $this->_tableName = 'students_assessments';
     }
 
     protected function mapEntity($entity) {
         $result = new Assessment();
-        $result->setId($entity->id);
-        $result->setStudentId($entity->student_id);
-        $result->setSubjectId($entity->subject_id);
-        $result->setGrade($entity->grade);
-        $result->setLectures($entity->lectures);
-        $result->setExercises($entity->exercises);
+        $result->setId($entity->sa_id);
+        $result->setStudentId($entity->sa_student_id);
+        $result->setSubjectId($entity->sa_subject_id);
+        $result->setAssessment($entity->sa_assessment);
+        $result->setLectures($entity->sa_workload_lectures);
+        $result->setExercises($entity->sa_workload_exercises);
         return $result;
     }
 
     protected function getProperties() {
-        return ['id', 'student_id', 'subject_id', 'grade', 'lectures', 'exercises'];
+        return ['sa_id', 'sa_student_id', 'sa_subject_id', 'sa_assessment', 'sa_workload_lectures', 'sa_workload_exercises'];
     }
 
 
@@ -31,12 +31,12 @@ class AssessmentRepository extends BaseRepository {
      */
     protected function getKeyValues($entity) {
         return [
-            ':id' => $entity->getId(),
-            ':student_id' => $entity->getStudentId(),
-            ':subject_id' => $entity->getSubjectId(),
-            ':grade' => $entity->getGrade(),
-            ':lectures' => $entity->getLectures(),
-            ':exercises' => $entity->getExercises()
+            ':sa_id' => $entity->getId(),
+            ':sa_student_id' => $entity->getStudentId(),
+            ':sa_subject_id' => $entity->getSubjectId(),
+            ':sa_assessment' => $entity->getAssessment(),
+            ':sa_workload_lectures' => $entity->getLectures(),
+            ':sa_workload_exercises' => $entity->getExercises()
         ];
     }
 }

@@ -14,7 +14,10 @@ class AuthenticationService {
     public static function isUserLogged() {
         return Session::instance()->exists(self::$key);
     }
-    
+
+    /**
+     * @return User
+     */
     public static function getLoggedUser() {
         return Session::instance()->get(self::$key);
     }

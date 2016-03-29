@@ -1,7 +1,7 @@
 <?php
     $viewData['title'] = 'Редактиране на специалност';
 
-/** @var \App\Models\Specialty $specialty */
+/** @var \App\Models\Speciality $specialty */
 $specialty = $model['specialty'];
 ?>
 <form class="form-horizontal" method="post" action="">

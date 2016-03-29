@@ -11,15 +11,15 @@ class SubjectRepository extends BaseRepository {
 
     protected function mapEntity($entity) {
         $result = new Subject();
-        $result->setId($entity->id);
-        $result->setName($entity->name);
-        $result->setLectures($entity->lectures);
-        $result->setExercises($entity->exercises);
+        $result->setId($entity->subject_id);
+        $result->setName($entity->subject_name);
+        $result->setLectures($entity->subject_workload_lectures);
+        $result->setExercises($entity->subject_workload_exercises);
         return $result;
     }
 
     protected function getProperties() {
-        return ['id', 'name', 'lectures', 'exercises'];
+        return ['subject_id', 'subject_name', 'subject_workload_lectures', 'subject_workload_exercises'];
     }
 
 
@@ -29,14 +29,14 @@ class SubjectRepository extends BaseRepository {
      */
     protected function getKeyValues($entity) {
         return [
-            ':id' => $entity->getId(),
-            ':name' => $entity->getName(),
-            ':lectures' => $entity->getLectures(),
-            ':exercises' => $entity->getExercises()
+            ':subject_id' => $entity->getId(),
+            ':subject_name' => $entity->getName(),
+            ':subject_workload_lectures' => $entity->getLectures(),
+            ':subject_workload_exercises' => $entity->getExercises()
         ];
     }
 
-    public function setSpecialtiesToSubject(Subject $subject, $specialties) {
-        ManyToManyRepository::setCollectionToTarget('specialties_subjects', $subject, $specialties, 'subject_id', 'specialties_id');
+    public function setSpecialtiesToSubject(Subject $subject, $specialities) {
+        ManyToManyRepository::setCollectionToTarget('specialities_subjects', $subject, $specialities, 'subject_id', 'specialities_id');
     }
 }

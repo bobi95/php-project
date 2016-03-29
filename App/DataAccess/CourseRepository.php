@@ -12,13 +12,13 @@ class CourseRepository extends BaseRepository {
 
     protected function mapEntity($entity) {
         $result = new Course();
-        $result->setId($entity->id);
-        $result->setName($entity->name);
+        $result->setId($entity->course_id);
+        $result->setName($entity->course_name);
         return $result;
     }
 
     protected function getProperties() {
-        return ['id', 'name'];
+        return ['course_id', 'course_name'];
     }
 
     /**
@@ -27,8 +27,8 @@ class CourseRepository extends BaseRepository {
      */
     protected function getKeyValues($entity) {
         return [
-            ':id' => $entity->getId(),
-            ':name' => $entity->getName()
+            ':course_id' => $entity->getId(),
+            ':course_name' => $entity->getName()
         ];
     }
 }

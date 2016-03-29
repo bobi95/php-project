@@ -1,28 +1,23 @@
 <?php
     include '../App/init.php';
-    App::run();
+if (!\App\Services\AuthenticationService::isUserLogged()) {
+    $userRepo = new \App\DataAccess\UserRepository();
+    if (!$userRepo->getUserByUsername('administrator')) {
+        $user = new \App\Models\User();
+        $user->setFirstName('Admin');
+        $user->setLastName('Adminov');
+        $user->setUsername('administrator');
+        $user->setPassword(\App\Helpers\Hash::create('userPass'));
+        $userRepo->save($user);
+    }
 
-$repo = new \App\DataAccess\UserRepository();
-if (empty($repo->getAll())) {
-    $role = new \App\Models\Role();
-    $role->setName('Administrator');
-    (new \App\DataAccess\RoleRepository())->save($role);
-
-    $user = new \App\Models\User();
-    $user->setUsername('useradmin');
-    $user->setFirstName('Admin');
-    $user->setLastName('Admin');
-    $user->setPassword(\App\Helpers\Hash::create('pass1234'));
-    $user->setEmail('admin@admin.com');
-    $user->setRoleId($role->getId());
-    $repo->save($user);
-
-    $user = new \App\Models\User();
-    $user->setUsername('useradmin2');
-    $user->setFirstName('Admin2');
-    $user->setLastName('Admin2');
-    $user->setPassword(\App\Helpers\Hash::create('pass1234'));
-    $user->setEmail('admin2@admin.com');
-    $user->setRoleId($role->getId());
-    $repo->save($user);
+    if (!$userRepo->getUserByUsername('testUser')) {
+        $user = new \App\Models\User();
+        $user->setFirstName('Test');
+        $user->setLastName('Userov');
+        $user->setUsername('testUser');
+        $user->setPassword(\App\Helpers\Hash::create('userPass'));
+        $userRepo->save($user);
+    }
 }
+    App::run();

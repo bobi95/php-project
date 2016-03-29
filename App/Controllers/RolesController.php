@@ -9,11 +9,12 @@ use App\Helpers\Html;
 use App\Helpers\Input;
 use App\Models\Role;
 use App\Services\AuthenticationService;
+use App\Services\AuthorizationService;
 
 class RolesController extends Controller {
 
     public function index() {
-        if (!AuthenticationService::isUserLogged()) {
+        if (!AuthorizationService::requireRole('admin')) {
             return $this->redirectToAction('login', 'account');
         }
 

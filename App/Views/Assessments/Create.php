@@ -9,13 +9,6 @@ $assessment = $model['assessment'];
 <form class="form-horizontal" method="post" action="">
 	<fieldset>
 	  <legend>Добавяне на оценка</legend>
-	  	<div class="form-group<?php if ($assessment->getError('name')) echo ' has-error'; ?>">
-	    	<label for="name" class="col-md-2">Име на оценка:</label>
-	    	<div class="col-md-10">
-	    		<input type="text" class="form-control" placeholder="Име" id="name" name="name" value="<?=escape($assessment->getName())?>">
-	    		<?php $html->formError($assessment->getError('name')) ?>
-	    	</div>
-	  	</div>
 	  	<div class="form-group<?php if ($assessment->getError('student_id')) echo ' has-error'; ?>">
             <label for="student_id" class="col-md-2">Студент:</label>
             <div class="col-md-10">
@@ -47,7 +40,7 @@ $assessment = $model['assessment'];
 		<div class="form-group<?php if ($assessment->getError('grade')) echo ' has-error'; ?>">
             <label for="grade" class="col-md-2">Оценка:</label>
             <div class="col-md-10">
-                <input type="text" class="form-control" placeholder="Потребителско име" id="grade" name="grade" value="<?=escape($assessment->getGrade())?>">
+                <input type="text" class="form-control" placeholder="Потребителско име" id="grade" name="grade" value="<?=escape($assessment->getAssessment())?>">
                 <?php $html->formError($assessment->getError('grade')) ?>
             </div>
         </div>
@@ -67,7 +60,7 @@ $assessment = $model['assessment'];
         </div>
 	  	<div class="form-group">
 		  	<div class="col-sm-offset-2 col-sm-10">
-		  		<a class="btn btn-default">Откажи</a>
+                <a class="btn btn-default" href="<?=$html->url('index', 'assessments')?>">Откажи</a>
 		  		<input type="submit" class="btn btn-default" value="Добави">
 		  	</div>
 	  	</div>

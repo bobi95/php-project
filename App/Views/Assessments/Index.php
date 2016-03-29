@@ -1,13 +1,13 @@
 <?php
 $viewData['title'] = 'Оценки';
 ?>
-<h3>Курсове</h3> <?php $html->link('Добави оценка', 'create', 'assessments') ?>
+<h3>Оценки</h3> <?php $html->link('Добави оценка', 'create', 'assessments') ?>
 <hr>
 <table class="table table-hover" id="assessment-table">
     <thead>
         <tr>
             <td>#</td>
-            <td>факултетен номер</td>
+            <td>Факултетен номер</td>
             <td>Предмет</td>
             <td>Оценка</td>
             <td>Лекции</td>

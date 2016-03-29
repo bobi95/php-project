@@ -8,8 +8,8 @@ class User extends BaseModel {
     private $last_name;
     private $email;
     private $password;
-    private $role_id;
-    
+    private $roles;
+
     public function getUsername() {
         return $this->username;
     }
@@ -50,17 +50,15 @@ class User extends BaseModel {
         $this->password = (string)$password;
     }
 
-    public function getRoleId() {
-        return $this->role_id;
-    }
+    public function getRoles() {
+        if ($this->roles != null) {
+            return $this->roles;
+        }
 
-    public function setRoleId($role_id) {
-        $this->role_id = (int)$role_id;
-    }
+        $roleRepo = new RoleRepository();
+        $this->roles = $roleRepo->getRolesForUser($this);
 
-    public function getRole() {
-        $repo = new RoleRepository();
-        return $repo->getById($this->getRoleId());
+        return $this->roles;
     }
 
     protected function validate() {

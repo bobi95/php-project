@@ -5,7 +5,7 @@ use App\Core\Controller;
 use App\Core\HttpContext;
 use App\DataAccess\CourseRepository;
 use App\DataAccess\EducationTypeRepository;
-use App\DataAccess\SpecialtyRepository;
+use App\DataAccess\SpecialityRepository;
 use App\DataAccess\StudentRepository;
 use App\Helpers\DataTablesParser;
 use App\Helpers\Html;
@@ -38,7 +38,7 @@ class StudentsController extends Controller {
         }
 
         $coursesRepo = new CourseRepository();
-        $specialityRepo = new SpecialtyRepository();
+        $specialityRepo = new SpecialityRepository();
         $educationTypeRepo = new EducationTypeRepository();
 
         // Build response & send to data tables
@@ -69,8 +69,8 @@ class StudentsController extends Controller {
             $studentsData[] = [
                 'id'          => $student->getId(),
                 'course_id'	      => $coursesRepo->getById($student->getCourseId())->getName(),
-                'specialty_id'  => $specialityRepo->getById($student->getSpecialtyId())->getName(),
-                'education_type_id'  => $educationTypeRepo->getById($student->getEducationTypeId())->getName(),
+                'specialty_id'  => $specialityRepo->getById($student->getSpecialityId())->getName(),
+                'education_type_id'  => $educationTypeRepo->getById($student->getEducationForm())->getName(),
                 'faculty_number'  => $student->getFacultyNumber(),
                 'options'     => $options
             ];
@@ -100,7 +100,7 @@ class StudentsController extends Controller {
         $models = [
             'student'        => $student,
             'courses'        => (new CourseRepository())->getAll(),
-            'specialties'    => (new SpecialtyRepository())->getAll(),
+            'specialties'    => (new SpecialityRepository())->getAll(),
             'educationTypes' => (new EducationTypeRepository())->getAll(),
         ];
 
@@ -139,7 +139,7 @@ class StudentsController extends Controller {
         $models = [
             'student'        => $student,
             'courses'        => (new CourseRepository())->getAll(),
-            'specialties'    => (new SpecialtyRepository())->getAll(),
+            'specialties'    => (new SpecialityRepository())->getAll(),
             'educationTypes' => (new EducationTypeRepository())->getAll(),
         ];
 
@@ -180,8 +180,8 @@ class StudentsController extends Controller {
 
     private static function bindStudents(Student $entity) {
         $entity->setCourseId(Input::post('course_id'));
-        $entity->setSpecialtyId(Input::post('specialty_id'));
-        $entity->setEducationTypeId(Input::post('education_type_id'));
+        $entity->setSpecialityId(Input::post('specialty_id'));
+        $entity->setEducationForm(Input::post('education_type_id'));
         $entity->setFacultyNumber(Input::post('faculty_number'));
     }
 }

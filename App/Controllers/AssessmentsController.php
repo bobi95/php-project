@@ -60,7 +60,7 @@ class AssessmentsController extends Controller {
                 'id'         => $assessment->getId(),
                 'student_id' => $studentsRepo->getById($assessment->getStudentId())->getFacultyNumber(),
                 'subject_id' => $subjectRepo->getById($assessment->getSubjectId())->getName(),
-                'grade'      => $assessment->getGrade(),
+                'grade'      => $assessment->getAssessment(),
                 'lectures'   => $assessment->getLectures(),
                 'exercises'  => $assessment->getExercises(),
                 'options'    => $options,
@@ -100,7 +100,7 @@ class AssessmentsController extends Controller {
 
         $assessment->setStudentId(Input::post('student_id'));
         $assessment->setSubjectId(Input::post('subject_id'));
-        $assessment->setGrade(Input::post('grade'));
+        $assessment->setAssessment(Input::post('grade'));
         $assessment->setLectures(Input::post('lectures'));
         $assessment->setExercises(Input::post('exercises'));
 
@@ -143,7 +143,7 @@ class AssessmentsController extends Controller {
 
         $assessment->setStudentId(Input::post('student_id'));
         $assessment->setSubjectId(Input::post('subject_id'));
-        $assessment->setGrade(Input::post('grade'));
+        $assessment->setAssessment(Input::post('grade'));
         $assessment->setLectures(Input::post('lectures'));
         $assessment->setExercises(Input::post('exercises'));
 

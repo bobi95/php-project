@@ -47,7 +47,7 @@
         </div>
     </div>
 </div>
-<div class="container body-content">
+<div class="container-fluid body-content" style="max-width: 87%">
     <?php $this->renderBody(); ?>
     <hr />
     <footer>

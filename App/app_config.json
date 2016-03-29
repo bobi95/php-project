@@ -2,15 +2,15 @@
     "delimeter": ".",
     "db": {
         "host": "127.0.0.1",
-        "name": "test",
+        "name": "php_project",
         "username": "root",
         "password": ""
     },
     "server": {
-        "dir": "E:\\Web\\elinka-project\\"
+        "dir": "C:\\wamp\\www\\php_project\\"
     },
     "views": {
-        "folder": "E:\\Web\\elinka-project\\App\\Views\\",
+        "folder": "C:\\wamp\\www\\php_project\\App\\Views\\",
         "layout": "__Layout.php"
     }
 }

@@ -3,14 +3,14 @@
 
 use App\Core\Controller;
 use App\Core\HttpContext;
-use App\DataAccess\SpecialtyRepository;
+use App\DataAccess\SpecialityRepository;
 use App\Helpers\DataTablesParser;
 use App\Helpers\Html;
 use App\Helpers\Input;
-use App\Models\Specialty;
+use App\Models\Speciality;
 use App\Services\AuthenticationService;
 
-class specialtiesController extends Controller {
+class SpecialitiesController extends Controller {
 
     public function index() {
         if (!AuthenticationService::isUserLogged()) {
@@ -37,7 +37,7 @@ class specialtiesController extends Controller {
         // Build response & send to data tables
         $specialtiesData = [];
 
-        $specialtyRepo = new SpecialtyRepository();
+        $specialtyRepo = new SpecialityRepository();
 
         $filter = $data->hasFilter() ? ['like' => ['name' => '%' . $data->getFilter() . '%']] : [];
 
@@ -50,7 +50,7 @@ class specialtiesController extends Controller {
 
         $htmlHelper = new Html();
 
-        /** @var Specialty $specialty */
+        /** @var Speciality $specialty */
         foreach ($specialties as $specialty)
         {
             // Options
@@ -87,17 +87,17 @@ class specialtiesController extends Controller {
         }
 
         if (HttpContext::instance()->requestMethod() === 'GET') {
-            return $this->view(['specialty' => new Specialty()]);
+            return $this->view(['specialty' => new Speciality()]);
         }
 
-        $model = new Specialty();
+        $model = new Speciality();
         self::bindSpecialties($model);
 
         if (!$model->isValid()) {
             return $this->view(['specialty' => $model]);
         }
 
-        $repo = new SpecialtyRepository();
+        $repo = new SpecialityRepository();
 
         $repo->save($model);
 
@@ -110,7 +110,7 @@ class specialtiesController extends Controller {
             return $this->redirectToAction('login', 'account');
         }
 
-        $repo = new SpecialtyRepository();
+        $repo = new SpecialityRepository();
 
         if (HttpContext::instance()->requestMethod() === 'GET') {
             $model = $repo->getById($id);
@@ -122,7 +122,7 @@ class specialtiesController extends Controller {
             return $this->view(['specialty' => $model]);
         }
 
-        $model = new Specialty();
+        $model = new Speciality();
         self::bindSpecialties($model);
 
         if (!$model->isValid()) {
@@ -146,9 +146,9 @@ class specialtiesController extends Controller {
             return $this->redirectToAction('login', 'account');
         }
 
-        $repo = new SpecialtyRepository();
+        $repo = new SpecialityRepository();
 
-        /** @var Specialty $specialty */
+        /** @var Speciality $specialty */
         $specialty = $repo->getById($id);
 
         if (!$specialty) {
@@ -160,7 +160,7 @@ class specialtiesController extends Controller {
         return $this->redirectToAction('index', 'specialties');
     }
 
-    private static function bindSpecialties(Specialty $entity) {
+    private static function bindSpecialties(Speciality $entity) {
         $entity->setId(Input::post('id'));
         $entity->setName(Input::post('name'));
         $entity->setShortName(Input::post('short_name'));

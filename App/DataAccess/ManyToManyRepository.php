@@ -51,4 +51,23 @@ class ManyToManyRepository {
             ]);
         }
     }
+
+
+    /**
+     * @param $table string Table with wanted data
+     * @param $id int Filter id
+     * @param $idColumn string Id column name of target table
+     * @param $manyToManyTable string Many to many table
+     * @param $manyToManyTargetColumn string Column, containing the ids for the wanted data
+     * @param $manyToManyIdColumn string Filter column
+     * @return array Wanted Data
+     */
+    public static function getAllFromOne($table, $id, $idColumn, $manyToManyTable, $manyToManyTargetColumn, $manyToManyIdColumn) {
+        $sql =  "select t.* from `{$manyToManyTable}` as mtm ".
+                "join `{$table}` as t on mtm.{$manyToManyTargetColumn} = t.{$idColumn} " .
+                "where mtm.{$manyToManyIdColumn} = :{$manyToManyIdColumn}";
+
+        $db = DB::getInstance();
+        return $db->queryAll($sql, [':' . $manyToManyIdColumn => $id]);
+    }
 }

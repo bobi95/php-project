@@ -6,7 +6,7 @@ $student = $model['student'];
 ?>
 <form class="form-horizontal" method="post" action="">
     <fieldset>
-        <legend>Добавяне на потребител</legend>
+        <legend>Добавяне на студент</legend>
         <div class="form-group<?php if ($student->getError('course_id')) echo ' has-error'; ?>">
             <label for="course_id" class="col-md-2">Курс:</label>
             <div class="col-md-10">
@@ -25,7 +25,7 @@ $student = $model['student'];
             <div class="col-md-10">
                 <select name="specialty_id" id="specialty_id" class="form-control">
                     <?php
-                    $specialty_id = $student->getSpecialtyId();
+                    $specialty_id = $student->getSpecialityId();
                     foreach ($model['specialties'] as $specialty) { ?>
                     <option value="<?=$specialty->getId()?>"<?php if ($specialty->getId() === $specialty_id) echo " selected"; ?>><?=$specialty->getName()?></option>
                 <?php } ?>
@@ -38,7 +38,7 @@ $student = $model['student'];
             <div class="col-md-10">
                 <select name="education_type_id" id="education_type_id" class="form-control">
                     <?php
-                        $education_type_id = $student->getSpecialtyId();
+                        $education_type_id = $student->getSpecialityId();
                         /** @var \App\Models\EducationType $eType */
                         foreach ($model['educationTypes'] as $eType) { ?>
                                 <option value="<?=$eType->getId()?>"<?php if ($eType->getId() === $education_type_id) echo " selected"; ?>><?=$eType->getName()?></option>
@@ -51,7 +51,7 @@ $student = $model['student'];
         <div class="form-group<?php if ($student->getError('faculty_number')) echo ' has-error'; ?>">
             <label for="faculty_number" class="col-md-2">Факултетен номер:</label>
             <div class="col-md-10">
-                <input type="text" class="form-control" placeholder="Потребителско име" id="faculty_number" name="faculty_number" value="<?=escape($student->getFacultyNumber())?>">
+                <input type="text" class="form-control" placeholder="Факултетен номер" id="faculty_number" name="faculty_number" value="<?=escape($student->getFacultyNumber())?>">
                 <?php $html->formError($student->getError('faculty_number')) ?>
             </div>
         </div>

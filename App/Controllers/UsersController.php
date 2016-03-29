@@ -210,7 +210,6 @@ class UsersController extends Controller {
         $model->setPassword(Input::post('password'));
         $model->setUsername(Input::post('username'));
         $model->setEmail(Input::post('email'));
-        $model->setRoleId(Input::post('role_id'));
     }
 
 //    public function Create() {

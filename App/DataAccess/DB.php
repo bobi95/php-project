@@ -77,7 +77,6 @@ class DB {
         $this->_error = false;
 
         $query = $this->_pdo->prepare($sql);
-
         if($query) {
 
             if(count($params)) {

@@ -5,10 +5,12 @@
  */
 class Hash {
     public static function create($password) {
-        return password_hash($password, PASSWORD_DEFAULT);
+        return sha1($password);
+//        return password_hash($password, PASSWORD_DEFAULT);
     }
     
     public static function verify($password, $hash) {
-        return password_verify($password, $hash);
+        return self::create($password) === $hash;
+//        return password_verify($password, $hash);
     }
 }

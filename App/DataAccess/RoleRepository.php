@@ -4,6 +4,7 @@ use App\Core\MapWrapper;
 use App\Helpers\ArrayWrapper;
 use App\Models\Action;
 use App\Models\Role;
+use App\Models\User;
 
 class RoleRepository extends BaseRepository {
 
@@ -15,13 +16,14 @@ class RoleRepository extends BaseRepository {
 
     protected function mapEntity($entity) {
         $result = new Role();
-        $result->setId($entity->id);
-        $result->setName($entity->name);
+        $result->setId($entity->role_id);
+        $result->setName($entity->role_name);
+        $result->setKey($entity->role_key);
         return $result;
     }
 
     protected function getProperties() {
-        return ['id', 'name'];
+        return ['role_id', 'role_name', 'role_key'];
     }
 
     /**
@@ -30,20 +32,30 @@ class RoleRepository extends BaseRepository {
      */
     protected function getKeyValues($entity) {
         return [
-            ':id' => $entity->getId(),
-            ':name' => $entity->getName()
+            ':role_id' => $entity->getId(),
+            ':role_name' => $entity->getName(),
+            ':role_key' => $entity->getKey()
         ];
     }
 
-    /**
-     * @param Role $role
-     * @param Action[] $actions
-     */
-    public function setActionsToRole(Role $role, $actions) {
-        ManyToManyRepository::setCollectionToTarget('roles_actions', $role, $actions, 'role_id', 'action_id');
+    public function setUsersToRole(Role $role, $users) {
+        ManyToManyRepository::setCollectionToTarget('users_roles', $role, $users, 'ru_role_id', 'ru_user_id');
     }
 
-    public function setUsersToRole(Role $role, $users) {
-        ManyToManyRepository::setCollectionToTarget('users_roles', $role, $users, 'role_id', 'user_id');
+    /**
+     * @param User $user
+     * @return array
+     */
+    public function getRolesForUser(User $user) {
+        $entities = ManyToManyRepository::getAllFromOne('roles', $user->getId(), 'role_id', 'roles_users', 'ru_role_id', 'ru_user_id');
+        $result = [];
+
+        if(!empty($entities)) {
+            foreach ($entities as $entity) {
+                $result[] = $this->mapEntity($entity);
+            }
+        }
+
+        return $result;
     }
 }

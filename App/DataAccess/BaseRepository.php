@@ -9,6 +9,7 @@ abstract class BaseRepository {
      */
     protected $_db;
     protected $_tableName;
+    protected $_idColumn;
 
     public function __construct() {
         $this->_db = DB::getInstance();
@@ -41,7 +42,7 @@ abstract class BaseRepository {
     public function getById($id) {
 
         $entity = $this->_db->query($this->getByIdQuery(), [
-            ':id' => (int)$id
+            ':' . $this->_idColumn => (int)$id
         ]);
 
         if($entity) {
@@ -52,7 +53,7 @@ abstract class BaseRepository {
     }
 
     protected function getByIdQuery() {
-        return "SELECT * FROM `{$this->_tableName}` WHERE id = :id LIMIT 1";
+        return "SELECT * FROM `{$this->_tableName}` WHERE {$this->_idColumn} = :{$this->_idColumn} LIMIT 1";
     }
 
     protected function prepareInsertQuery($properties) {
@@ -63,8 +64,9 @@ abstract class BaseRepository {
             $values = [];
             $columns = [];
 
+            $idKey = ':' . $this->_idColumn;
             foreach ($properties as $prop) {
-                if ($prop === 'id') continue;
+                if ($prop === $idKey) continue;
                 $values[] = ':'. $prop;
                 $columns[] = $prop;
             }
@@ -93,7 +95,7 @@ abstract class BaseRepository {
     }
 
     protected function getDeleteQuery() {
-        return "DELETE FROM `{$this->_tableName}` WHERE id = :id";
+        return "DELETE FROM `{$this->_tableName}` WHERE {$this->_idColumn} = :{$this->_idColumn}";
     }
 
     public function save(BaseModel $entity) {
@@ -106,7 +108,7 @@ abstract class BaseRepository {
 
     protected function insert(BaseModel $entity) {
         $kv = $this->getKeyValues($entity);
-        unset($kv[':id']);
+        unset($kv[':' . $this->_idColumn]);
         $this->_db->nonQuery(
             $this->prepareInsertQuery($this->getProperties()),
             $kv);
@@ -122,7 +124,7 @@ abstract class BaseRepository {
 
     public function delete(BaseModel $entity) {
         $this->_db->nonQuery($this->getDeleteQuery(), [
-            ':id' => $entity->getId()
+            ':' . $this->_idColumn => $entity->getId()
         ]);
     }
 
@@ -139,7 +141,7 @@ abstract class BaseRepository {
             $sql = " LIMIT ";
 
             if($offset > 0) {
-                $sql .= "{$take}, {$offset}";
+                $sql .= "{$offset}, {$take}";
             } else {
                 $sql .= $take;
             }

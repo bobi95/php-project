@@ -4,7 +4,7 @@ class Assessment extends BaseModel {
 
     private $student_id;
     private $subject_id;
-    private $grade;
+    private $assessment;
     private $lectures;
     private $exercises;
 
@@ -24,12 +24,12 @@ class Assessment extends BaseModel {
         $this->subject_id = (int)$subject_id;
     }
 
-    public function getGrade() {
-        return $this->grade;
+    public function getAssessment() {
+        return $this->assessment;
     }
 
-    public function setGrade($grade) {
-        $this->grade = (double)$grade;
+    public function setAssessment($assessment) {
+        $this->assessment = (double)$assessment;
     }
 
     public function getLectures() {
@@ -61,20 +61,20 @@ class Assessment extends BaseModel {
             $this->setError('subject_id', NULL);
         }
 
-        if(empty($this->grade)) {
-            $this->setError('grade', 'Grade is required.');
+        if(empty($this->assessment)) {
+            $this->setError('assessment', 'Assessment is required.');
         } else {
-            $this->setError('grade', NULL);
+            $this->setError('assessment', NULL);
         }
 
         if(empty($this->lectures)) {
-            $this->setError('lectures', 'Lectures is required.');
+            $this->setError('lectures', 'Lectures workload is required.');
         } else {
             $this->setError('lectures', NULL);
         }
 
         if(empty($this->exercises)) {
-            $this->setError('exercises', 'Exercises is required.');
+            $this->setError('exercises', 'Exercises workload is required.');
         } else {
             $this->setError('exercises', NULL);
         }

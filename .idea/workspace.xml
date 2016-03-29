@@ -1,7 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79954acc-a099-4d89-b646-00fe18e77e21" name="Default" comment="" />
+    <list default="true" id="79954acc-a099-4d89-b646-00fe18e77e21" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/App/DataAccess/SpecialityRepository.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/App/DataAccess/SubjectAssessmentRepository.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/App/Models/SubjectAssessment.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/App/Services/AuthorizationService.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/App/Views/Home/StudentAssessments.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/Controllers/ActionsController.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/Controllers/ControllersController.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/Controllers/EducationTypesController.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/DataAccess/ActionRepository.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/DataAccess/ControllerRepository.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/DataAccess/EducationTypeRepository.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/DataAccess/SpecialtyRepository.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/Models/Action.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/Models/Controller.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/Models/EducationType.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/Views/Actions/Create.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/Views/Actions/Edit.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/Views/Actions/Index.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/Views/Controllers/Create.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/Views/Controllers/Edit.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/Views/Controllers/Index.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/Views/EducationTypes/Create.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/Views/EducationTypes/Edit.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/Views/EducationTypes/Index.php" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/App/Controllers/SpecialtiesController.php" afterPath="$PROJECT_DIR$/App/Controllers/SpecialitiesController.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/App/Models/Specialty.php" afterPath="$PROJECT_DIR$/App/Models/Speciality.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/Controllers/AssessmentsController.php" afterPath="$PROJECT_DIR$/App/Controllers/AssessmentsController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/Controllers/HomeController.php" afterPath="$PROJECT_DIR$/App/Controllers/HomeController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/Controllers/RolesController.php" afterPath="$PROJECT_DIR$/App/Controllers/RolesController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/Controllers/StudentsController.php" afterPath="$PROJECT_DIR$/App/Controllers/StudentsController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/Controllers/UsersController.php" afterPath="$PROJECT_DIR$/App/Controllers/UsersController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/DataAccess/AssessmentRepository.php" afterPath="$PROJECT_DIR$/App/DataAccess/AssessmentRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/DataAccess/BaseRepository.php" afterPath="$PROJECT_DIR$/App/DataAccess/BaseRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/DataAccess/CourseRepository.php" afterPath="$PROJECT_DIR$/App/DataAccess/CourseRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/DataAccess/DB.php" afterPath="$PROJECT_DIR$/App/DataAccess/DB.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/DataAccess/ManyToManyRepository.php" afterPath="$PROJECT_DIR$/App/DataAccess/ManyToManyRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/DataAccess/RoleRepository.php" afterPath="$PROJECT_DIR$/App/DataAccess/RoleRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/DataAccess/StudentRepository.php" afterPath="$PROJECT_DIR$/App/DataAccess/StudentRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/DataAccess/SubjectRepository.php" afterPath="$PROJECT_DIR$/App/DataAccess/SubjectRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/DataAccess/UserRepository.php" afterPath="$PROJECT_DIR$/App/DataAccess/UserRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/Helpers/Hash.php" afterPath="$PROJECT_DIR$/App/Helpers/Hash.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/Models/Assessment.php" afterPath="$PROJECT_DIR$/App/Models/Assessment.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/Models/Role.php" afterPath="$PROJECT_DIR$/App/Models/Role.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/Models/Student.php" afterPath="$PROJECT_DIR$/App/Models/Student.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/Models/User.php" afterPath="$PROJECT_DIR$/App/Models/User.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/Services/AuthenticationService.php" afterPath="$PROJECT_DIR$/App/Services/AuthenticationService.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/Services/PagingService.php" afterPath="$PROJECT_DIR$/App/Services/PagingService.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/Views/Assessments/Create.php" afterPath="$PROJECT_DIR$/App/Views/Assessments/Create.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/Views/Assessments/Edit.php" afterPath="$PROJECT_DIR$/App/Views/Assessments/Edit.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/Views/Assessments/Index.php" afterPath="$PROJECT_DIR$/App/Views/Assessments/Index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/Views/Specialties/Create.php" afterPath="$PROJECT_DIR$/App/Views/Specialties/Create.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/Views/Specialties/Edit.php" afterPath="$PROJECT_DIR$/App/Views/Specialties/Edit.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/Views/Students/Create.php" afterPath="$PROJECT_DIR$/App/Views/Students/Create.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/Views/Students/Edit.php" afterPath="$PROJECT_DIR$/App/Views/Students/Edit.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/Views/__Layout.php" afterPath="$PROJECT_DIR$/App/Views/__Layout.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/app_config.json" afterPath="$PROJECT_DIR$/App/app_config.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/htmls/navigation.html" afterPath="$PROJECT_DIR$/public/htmls/navigation.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/index.php" afterPath="$PROJECT_DIR$/public/index.php" />
+    </list>
     <ignored path="php_project.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -35,107 +95,119 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="HtmlView.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/App/Core/Views/HtmlView.php">
+      <file leaf-file-name="HomeController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/App/Controllers/HomeController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-19.17647">
-              <caret line="57" column="37" selection-start-line="57" selection-start-column="37" selection-end-line="57" selection-end-column="37" />
+            <state vertical-scroll-proportion="-16.5">
+              <caret line="111" column="31" selection-start-line="111" selection-start-column="31" selection-end-line="111" selection-end-column="31" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ActionRepository.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/App/DataAccess/ActionRepository.php">
+      <file leaf-file-name="PagingService.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/App/Services/PagingService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-22.794117">
-              <caret line="31" column="10" selection-start-line="31" selection-start-column="10" selection-end-line="31" selection-end-column="10" />
+            <state vertical-scroll-proportion="-21.647058">
+              <caret line="48" column="29" selection-start-line="44" selection-start-column="12" selection-end-line="48" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SpecialityRepository.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/App/DataAccess/SpecialityRepository.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.264706">
+              <caret line="15" column="43" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StudentAssessments.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/App/Views/Home/StudentAssessments.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.94192797">
+              <caret line="74" column="31" selection-start-line="74" selection-start-column="31" selection-end-line="74" selection-end-column="31" />
               <folding>
-                <element signature="e#33#55#0#PHP" expanded="true" />
+                <marker date="1459268713785" expanded="true" signature="1091:1112" placeholder="..." />
+                <marker date="1459268713785" expanded="true" signature="2253:2608" placeholder="..." />
+                <marker date="1459268713785" expanded="true" signature="2353:2608" placeholder="..." />
+                <marker date="1459268713785" expanded="true" signature="2409:2570" placeholder="..." />
+                <marker date="1459268713785" expanded="true" signature="2587:2608" placeholder="..." />
+                <marker date="1459268713785" expanded="true" signature="4526:4547" placeholder="..." />
+                <marker date="1459268713785" expanded="true" signature="4938:4974" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AssessmentRepository.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/App/DataAccess/AssessmentRepository.php">
+      <file leaf-file-name="Html.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/App/Helpers/Html.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-18.382353">
-              <caret line="31" column="38" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
+            <state vertical-scroll-proportion="-8.441176">
+              <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ControllerRepository.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/App/DataAccess/ControllerRepository.php">
+      <file leaf-file-name="BaseRepository.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/App/DataAccess/BaseRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-19.735294">
-              <caret line="27" column="38" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CourseRepository.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/App/DataAccess/CourseRepository.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-18.382353">
-              <caret line="27" column="38" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EducationTypeRepository.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/App/DataAccess/EducationTypeRepository.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-19.117647">
-              <caret line="28" column="38" selection-start-line="28" selection-start-column="38" selection-end-line="28" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ManyToManyRepository.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/App/DataAccess/ManyToManyRepository.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.7352941">
-              <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+            <state vertical-scroll-proportion="-10.617647">
+              <caret line="219" column="32" selection-start-line="219" selection-start-column="32" selection-end-line="219" selection-end-column="32" />
               <folding>
-                <marker date="1458246066977" expanded="true" signature="259:306" placeholder="SELECT * FRO... ${{$table}}" />
-                <marker date="1458246066977" expanded="true" signature="1180:1262" placeholder="DELETE FROM " />
-                <marker date="1458246066977" expanded="true" signature="1496:1593" placeholder="INSERT INTO `${{$table}}`... " />
+                <marker date="1459265384432" expanded="true" signature="542:577" placeholder="SELECT * FRO... ${{$this-&gt;_tableName}}" />
+                <marker date="1459265384432" expanded="true" signature="1431:1521" placeholder="SELECT * FRO... ${{$this-&gt;_tableName}}" />
+                <marker date="1459265384432" expanded="true" signature="1605:1638" placeholder="INSERT INTO `${{$this-&gt;_tableName}}`... " />
+                <marker date="1459265384432" expanded="true" signature="2170:2202" placeholder="UPDATE `${{$... " />
+                <marker date="1459265384432" expanded="true" signature="2537:2599" placeholder="DELETE FROM " />
+                <marker date="1459265384432" expanded="true" signature="2537:2617" placeholder="DELETE FROM " />
+                <marker date="1459265384432" expanded="true" signature="3556:3609" placeholder="SELECT COUNT... ${{$this-&gt;_tableName}}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RoleRepository.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/App/DataAccess/RoleRepository.php">
+      <file leaf-file-name="DB.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/App/DataAccess/DB.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.2058823">
-              <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+            <state vertical-scroll-proportion="-2.9411764">
+              <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UsersController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/App/Controllers/UsersController.php">
+      <file leaf-file-name="__Layout.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/App/Views/__Layout.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.558824">
-              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+            <state vertical-scroll-proportion="-9.882353">
+              <caret line="49" column="62" selection-start-line="49" selection-start-column="62" selection-end-line="49" selection-end-column="62" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Index.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/App/Views/Users/Index.php">
+      <file leaf-file-name="SubjectAssessmentRepository.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/App/DataAccess/SubjectAssessmentRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6090487">
-              <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+            <state vertical-scroll-proportion="-5.470588">
+              <caret line="34" column="26" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="26" />
+              <folding>
+                <element signature="e#34#57#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StudentRepository.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/App/DataAccess/StudentRepository.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.2352943">
+              <caret line="31" column="26" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -150,57 +222,63 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/App/Functions/autoload.php" />
-        <option value="$PROJECT_DIR$/App/Models/BaseModel.php" />
-        <option value="$PROJECT_DIR$/App/Helpers/Cookies.php" />
-        <option value="$PROJECT_DIR$/App/Core/Router/Router.php" />
-        <option value="$PROJECT_DIR$/App/Models/Controller.php" />
-        <option value="$PROJECT_DIR$/App/Models/Role.php" />
-        <option value="$PROJECT_DIR$/App/Models/Course.php" />
-        <option value="$PROJECT_DIR$/App/Models/EducationType.php" />
-        <option value="$PROJECT_DIR$/App/Models/Specialty.php" />
-        <option value="$PROJECT_DIR$/App/Models/Student.php" />
-        <option value="$PROJECT_DIR$/App/Models/Subject.php" />
-        <option value="$PROJECT_DIR$/App/Models/Action.php" />
-        <option value="$PROJECT_DIR$/App/DataAccess/StudentRepository.php" />
-        <option value="$PROJECT_DIR$/App/Helpers/ArrayWrapper.php" />
-        <option value="$PROJECT_DIR$/App/DataAccess/ManyToManyRepository.php" />
-        <option value="$PROJECT_DIR$/App/DataAccess/SpecialtyRepository.php" />
-        <option value="$PROJECT_DIR$/App/DataAccess/SubjectRepository.php" />
-        <option value="$PROJECT_DIR$/App/Controllers/HomeController.php" />
-        <option value="$PROJECT_DIR$/App/Views/Account/login.php" />
-        <option value="$PROJECT_DIR$/App/Services/AuthenticationService.php" />
-        <option value="$PROJECT_DIR$/App/Helpers/Hash.php" />
-        <option value="$PROJECT_DIR$/public/bootstrap_css.html" />
-        <option value="$PROJECT_DIR$/App/Controllers/AccountController.php" />
-        <option value="$PROJECT_DIR$/App/Core/HttpContext.php" />
-        <option value="$PROJECT_DIR$/App/Core/Views/HtmlView.php" />
-        <option value="$PROJECT_DIR$/App/Functions/helpers.php" />
-        <option value="$PROJECT_DIR$/App/Views/__Layout.php" />
-        <option value="$PROJECT_DIR$/App/Views/Home/Index.php" />
-        <option value="$PROJECT_DIR$/App/Controllers/StudentsController.php" />
-        <option value="$PROJECT_DIR$/App/Models/Assessment.php" />
-        <option value="$PROJECT_DIR$/App/Routes/DefaultRoute.php" />
-        <option value="$PROJECT_DIR$/App/Services/PagingService.php" />
-        <option value="$PROJECT_DIR$/App/DataAccess/BaseRepository.php" />
-        <option value="$PROJECT_DIR$/App/Helpers/Html.php" />
-        <option value="$PROJECT_DIR$/App/Models/User.php" />
-        <option value="$PROJECT_DIR$/App/Views/Users/Create.php" />
-        <option value="$PROJECT_DIR$/App/Views/Users/Edit.php" />
-        <option value="$PROJECT_DIR$/App/DataAccess/UserRepository.php" />
-        <option value="$PROJECT_DIR$/App/DataAccess/DB.php" />
+        <option value="$PROJECT_DIR$/App/Views/Specialties/Create.php" />
+        <option value="$PROJECT_DIR$/App/Views/Specialties/Edit.php" />
+        <option value="$PROJECT_DIR$/App/Views/Subjects/Create.php" />
+        <option value="$PROJECT_DIR$/App/Views/Subjects/Edit.php" />
         <option value="$PROJECT_DIR$/App/Views/Users/Index.php" />
-        <option value="$PROJECT_DIR$/public/index.php" />
-        <option value="$PROJECT_DIR$/App/DataAccess/ActionRepository.php" />
-        <option value="$PROJECT_DIR$/App/DataAccess/AssessmentRepository.php" />
-        <option value="$PROJECT_DIR$/App/DataAccess/ControllerRepository.php" />
+        <option value="$PROJECT_DIR$/App/Views/Students/Index.php" />
+        <option value="$PROJECT_DIR$/App/Views/Subjects/Index.php" />
+        <option value="$PROJECT_DIR$/App/Views/Specialties/Index.php" />
+        <option value="$PROJECT_DIR$/App/Views/Assessments/Edit.php" />
+        <option value="$PROJECT_DIR$/App/Views/Actions/Create.php" />
+        <option value="$PROJECT_DIR$/App/Views/Actions/Edit.php" />
+        <option value="$PROJECT_DIR$/App/Views/Assessments/Create.php" />
+        <option value="$PROJECT_DIR$/App/Views/Students/Edit.php" />
+        <option value="$PROJECT_DIR$/App/Views/Students/Create.php" />
+        <option value="$PROJECT_DIR$/App/Views/Assessments/Index.php" />
+        <option value="$PROJECT_DIR$/App/Models/Specialty.php" />
+        <option value="$PROJECT_DIR$/App/Models/Speciality.php" />
+        <option value="$PROJECT_DIR$/App/DataAccess/SpecialtyRepository.php" />
         <option value="$PROJECT_DIR$/App/DataAccess/CourseRepository.php" />
-        <option value="$PROJECT_DIR$/App/DataAccess/EducationTypeRepository.php" />
-        <option value="$PROJECT_DIR$/App/DataAccess/RoleRepository.php" />
+        <option value="$PROJECT_DIR$/App/DataAccess/SubjectRepository.php" />
+        <option value="$PROJECT_DIR$/App/Models/Assessment.php" />
+        <option value="$PROJECT_DIR$/App/DataAccess/AssessmentRepository.php" />
+        <option value="$PROJECT_DIR$/public/htmls/navigation.html" />
+        <option value="$PROJECT_DIR$/App/Controllers/SpecialtiesController.php" />
+        <option value="$PROJECT_DIR$/App/Controllers/SpecialitiesController.php" />
+        <option value="$PROJECT_DIR$/App/Models/User.php" />
+        <option value="$PROJECT_DIR$/App/app_config.json" />
+        <option value="$PROJECT_DIR$/App/DataAccess/UserRepository.php" />
+        <option value="$PROJECT_DIR$/App/Helpers/Hash.php" />
         <option value="$PROJECT_DIR$/App/Controllers/UsersController.php" />
+        <option value="$PROJECT_DIR$/App/Services/AuthenticationService.php" />
+        <option value="$PROJECT_DIR$/App/DataAccess/ManyToManyRepository.php" />
+        <option value="$PROJECT_DIR$/App/Controllers/RolesController.php" />
+        <option value="$PROJECT_DIR$/App/Models/Role.php" />
+        <option value="$PROJECT_DIR$/App/DataAccess/RoleRepository.php" />
+        <option value="$PROJECT_DIR$/App/Services/AuthorizationService.php" />
+        <option value="$PROJECT_DIR$/App/Models/SubjectAssessent.php" />
+        <option value="$PROJECT_DIR$/public/index.php" />
+        <option value="$PROJECT_DIR$/App/Models/UserStudent.php" />
+        <option value="$PROJECT_DIR$/App/DataAccess/UserStudentRepository.php" />
+        <option value="$PROJECT_DIR$/App/Models/Student.php" />
+        <option value="$PROJECT_DIR$/App/DataAccess/StudentRepository.php" />
+        <option value="$PROJECT_DIR$/App/DataAccess/SpecialityRepository.php" />
+        <option value="$PROJECT_DIR$/App/Models/SubjectAssessment.php" />
+        <option value="$PROJECT_DIR$/App/DataAccess/SubjectAssessmentRepository.php" />
+        <option value="$PROJECT_DIR$/App/Views/__Layout.php" />
+        <option value="$PROJECT_DIR$/App/DataAccess/BaseRepository.php" />
+        <option value="$PROJECT_DIR$/App/Services/PagingService.php" />
+        <option value="$PROJECT_DIR$/App/DataAccess/DB.php" />
+        <option value="$PROJECT_DIR$/App/Controllers/HomeController.php" />
+        <option value="$PROJECT_DIR$/App/Views/Home/StudentAssessments.php" />
       </list>
     </option>
   </component>
@@ -208,6 +286,9 @@
   <component name="JsBuildToolPackageJson" detection-done="true" />
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
+  </component>
+  <component name="PhpServers">
+    <servers />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
@@ -242,7 +323,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -365,7 +445,179 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Subjects" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="php_project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="php_project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Students" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="php_project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="php_project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Specialties" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="php_project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="php_project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Roles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="php_project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="php_project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Home" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="php_project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="php_project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Courses" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="php_project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="php_project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Assessments" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="php_project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="php_project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Account" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="php_project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="php_project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Services" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -437,52 +689,13 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="php_project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="php_project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="App" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="php_project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="php_project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="App" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="Controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -495,8 +708,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\wamp\www\php_project\App\DataAccess" />
-      <recent name="C:\wamp\www\php_project\App\Models" />
+      <recent name="C:\wamp\www\php_project\public\js" />
+      <recent name="C:\wamp\www\php_project\App\Views" />
+      <recent name="C:\wamp\www\php_project\App\Controllers" />
+      <recent name="C:\wamp\www\php_project\App\Views\Controllers" />
+      <recent name="C:\wamp\www\php_project\App\Views\Specialties" />
     </key>
   </component>
   <component name="RunManager">
@@ -546,7 +762,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19936034" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15724947" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -560,7 +776,7 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32719395" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -584,141 +800,309 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/App/DataAccess/SpecialtyRepository.php">
+    <entry file="file://$PROJECT_DIR$/App/Views/Courses/Create.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.441176">
-          <caret line="35" column="4" selection-start-line="35" selection-start-column="4" selection-end-line="37" selection-end-column="5" />
+        <state vertical-scroll-proportion="-13.970589">
+          <caret line="19" column="76" selection-start-line="19" selection-start-column="76" selection-end-line="19" selection-end-column="76" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App/DataAccess/SubjectRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.176471">
-          <caret line="38" column="113" selection-start-line="38" selection-start-column="113" selection-end-line="38" selection-end-column="113" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/Views/Account/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="56" selection-start-line="2" selection-start-column="56" selection-end-line="2" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/Helpers/Hash.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="49" selection-start-line="11" selection-start-column="49" selection-end-line="11" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/bootstrap_css.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="283.82352">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/Core/HttpContext.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="51" column="7" selection-start-line="51" selection-start-column="7" selection-end-line="51" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/Functions/helpers.php">
+    <entry file="file://$PROJECT_DIR$/App/Views/Courses/Edit.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-10.294118">
-          <caret line="14" column="14" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/Controllers/StudentsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.294118">
-          <caret line="14" column="10" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/Core/Router/Route.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-21.205883">
-          <caret line="84" column="29" selection-start-line="84" selection-start-column="29" selection-end-line="84" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/Routes/DefaultRoute.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.029411">
-          <caret line="90" column="17" selection-start-line="90" selection-start-column="17" selection-end-line="90" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/autoloaders/users.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.823529">
-          <caret line="32" column="24" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/Services/AuthenticationService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34338748">
-          <caret line="18" column="52" selection-start-line="18" selection-start-column="52" selection-end-line="18" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/Services/PagingService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.78306264">
-          <caret line="58" column="29" selection-start-line="58" selection-start-column="29" selection-end-line="58" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/Controllers/HomeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23201856">
-          <caret line="9" column="63" selection-start-line="9" selection-start-column="63" selection-end-line="9" selection-end-column="63" />
+          <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/App/Views/Home/Index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.31902552">
-          <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+        <state vertical-scroll-proportion="-2.9411764">
+          <caret line="4" column="11" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App/Controllers/AccountController.php">
+    <entry file="file://$PROJECT_DIR$/App/Views/Specialties/Create.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.05800464">
-          <caret line="6" column="39" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
+        <state vertical-scroll-proportion="-3.6764705">
+          <caret line="5" column="2" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App/Models/Action.php">
+    <entry file="file://$PROJECT_DIR$/App/Views/Specialties/Edit.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.294118">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        <state vertical-scroll-proportion="-2.9411764">
+          <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Views/Subjects/Create.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.147059">
+          <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Views/Subjects/Edit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-20.588236">
+          <caret line="28" column="41" selection-start-line="28" selection-start-column="41" selection-end-line="28" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Views/Students/Index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="41" selection-start-line="6" selection-start-column="41" selection-end-line="6" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Views/Subjects/Index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="47" selection-start-line="3" selection-start-column="47" selection-end-line="3" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Views/Specialties/Index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Views/Assessments/Edit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="62" column="43" selection-start-line="62" selection-start-column="43" selection-end-line="62" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Views/Roles/Create.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="94" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="94" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Views/Assessments/Create.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="62" column="84" selection-start-line="62" selection-start-column="84" selection-end-line="62" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Views/Students/Edit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Views/Students/Create.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Views/Users/Index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/users.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="62" selection-start-line="4" selection-start-column="53" selection-end-line="4" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Helpers/DataTablesParser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Views/Assessments/Index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Models/Speciality.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App/Models/Controller.php">
+    <entry file="file://$PROJECT_DIR$/App/DataAccess/CourseRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7629108">
+          <caret line="30" column="21" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/DataAccess/SubjectRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-22.794117">
+          <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/DataAccess/AssessmentRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="43" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Controllers/SpecialitiesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.6764705">
+          <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/app_config.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.9411764">
+          <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Helpers/Hash.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.823529">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Services/AuthenticationService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-20.17647">
+          <caret line="40" column="5" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Models/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.8529415">
+          <caret line="58" column="42" selection-start-line="58" selection-start-column="42" selection-end-line="58" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Controllers/UsersController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-55.14706">
+          <caret line="212" column="0" selection-start-line="212" selection-start-column="0" selection-end-line="212" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/DataAccess/UserRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="16.588236">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <marker date="1459168053524" expanded="true" signature="1563:1635" placeholder="SELECT * FRO... users" />
+            <marker date="1459168053524" expanded="true" signature="1881:1955" placeholder="SELECT * FRO... users" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Controllers/RolesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.882353">
+          <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Models/Role.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Models/Assessment.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8130081">
+          <caret line="76" column="61" selection-start-line="76" selection-start-column="61" selection-end-line="76" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Controllers/AssessmentsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.8130081">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/DataAccess/RoleRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.62253195">
+          <caret line="49" column="46" selection-start-line="49" selection-start-column="46" selection-end-line="49" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/DataAccess/ManyToManyRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5934959">
+          <caret line="64" column="27" selection-start-line="64" selection-start-column="27" selection-end-line="64" selection-end-column="27" />
+          <folding>
+            <marker date="1459169379774" expanded="true" signature="259:306" placeholder="SELECT * FRO... ${{$table}}" />
+            <marker date="1459169379774" expanded="true" signature="1180:1262" placeholder="DELETE FROM " />
+            <marker date="1459169379774" expanded="true" signature="1496:1593" placeholder="INSERT INTO `${{$table}}`... " />
+            <marker date="1459169379774" expanded="true" signature="2287:2330" placeholder="select t.* f... ${{$manyToManyTable}}" />
+            <marker date="1459169379774" expanded="true" signature="2287:2331" placeholder="select t.* f... ${{$manyToManyTable}}" />
+            <marker date="1459169379774" expanded="true" signature="2287:2409" placeholder="select r.* f... roles_users" />
+            <marker date="1459169379774" expanded="true" signature="2287:2420" placeholder="select t.* f... ${{$manyToManyTable}}" />
+            <marker date="1459169379774" expanded="true" signature="2287:2452" placeholder="select t.* f... ${{$manyToManyTable}}" />
+            <marker date="1459169379774" expanded="true" signature="2287:2473" placeholder="select t.* f... ${{$manyToManyTable}}" />
+            <marker date="1459169379774" expanded="true" signature="2287:2477" placeholder="select t.* f... ${{$manyToManyTable}}" />
+            <marker date="1459169379774" expanded="true" signature="2287:2498" placeholder="select t.* f... ${{$manyToManyTable}}" />
+            <marker date="1459169379774" expanded="true" signature="2287:2499" placeholder="select t.* f... ${{$manyToManyTable}}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Services/AuthorizationService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37746805">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-15.441176">
           <caret line="21" column="1" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
@@ -726,301 +1110,125 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App/Models/Course.php">
+    <entry file="file://$PROJECT_DIR$/public/htmls/navigation.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.2058823">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/Models/EducationType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.6764705">
-          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/Models/Role.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.088235">
-          <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/Models/Specialty.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.088235">
-          <caret line="19" column="47" selection-start-line="19" selection-start-column="47" selection-end-line="19" selection-end-column="47" />
+        <state vertical-scroll-proportion="-7.7058825">
+          <caret line="69" column="56" selection-start-line="69" selection-start-column="8" selection-end-line="69" selection-end-column="56" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/App/Models/Student.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.2058823">
-          <caret line="39" column="5" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App/Models/Subject.php">
+    <entry file="file://$PROJECT_DIR$/App/Models/SubjectAssessment.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.3235295">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.2740999">
+          <caret line="100" column="0" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App/Models/Assessment.php">
+    <entry file="file://$PROJECT_DIR$/App/DataAccess/SubjectAssessmentRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.20301624">
-          <caret line="31" column="38" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/Models/BaseModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.11600928">
-          <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/App.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.617647">
-          <caret line="163" column="40" selection-start-line="163" selection-start-column="40" selection-end-line="163" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/Helpers/Input.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37470996">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/DataAccess/BaseRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.441176">
-          <caret line="98" column="20" selection-start-line="98" selection-start-column="20" selection-end-line="98" selection-end-column="20" />
+        <state vertical-scroll-proportion="-5.470588">
+          <caret line="34" column="26" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="26" />
           <folding>
-            <marker date="1458312016748" expanded="true" signature="516:551" placeholder="SELECT * FRO... {}" />
-            <marker date="1458312016748" expanded="true" signature="1388:1446" placeholder="SELECT * FRO... {}" />
-            <marker date="1458312016748" expanded="true" signature="1530:1563" placeholder="INSERT INTO `{}`... " />
-            <marker date="1458312016748" expanded="true" signature="2048:2080" placeholder="UPDATE `${{$... " />
-            <marker date="1458312016748" expanded="true" signature="2415:2463" placeholder="DELETE FROM " />
-            <marker date="1458312016748" expanded="true" signature="3322:3375" placeholder="SELECT COUNT... ${{$this-&gt;_tableName}}" />
+            <element signature="e#34#57#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/htmls/users-add.html">
+    <entry file="file://$PROJECT_DIR$/App/Views/__Layout.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.8235294">
-          <caret line="43" column="50" selection-start-line="43" selection-start-column="50" selection-end-line="43" selection-end-column="50" />
+        <state vertical-scroll-proportion="-9.882353">
+          <caret line="49" column="62" selection-start-line="49" selection-start-column="62" selection-end-line="49" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Services/PagingService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-21.647058">
+          <caret line="48" column="29" selection-start-line="44" selection-start-column="12" selection-end-line="48" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/App/Helpers/Html.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-21.67647">
-          <caret line="49" column="5" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
+        <state vertical-scroll-proportion="-8.441176">
+          <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App/Helpers/Session.php">
+    <entry file="file://$PROJECT_DIR$/App/DataAccess/StudentRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.029411">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        <state vertical-scroll-proportion="-6.2352943">
+          <caret line="31" column="26" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App/Models/User.php">
+    <entry file="file://$PROJECT_DIR$/App/DataAccess/BaseRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.147059">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/Views/Users/Create.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.4117646">
-          <caret line="6" column="27" selection-start-line="0" selection-start-column="0" selection-end-line="71" selection-end-column="7" />
+        <state vertical-scroll-proportion="-10.617647">
+          <caret line="219" column="32" selection-start-line="219" selection-start-column="32" selection-end-line="219" selection-end-column="32" />
           <folding>
-            <marker date="1458329551031" expanded="true" signature="432:680" placeholder="..." />
-            <marker date="1458329551031" expanded="true" signature="790:1168" placeholder="..." />
-            <marker date="1458329551031" expanded="true" signature="902:1153" placeholder="..." />
-            <marker date="1458329551031" expanded="true" signature="1262:1623" placeholder="..." />
-            <marker date="1458329551031" expanded="true" signature="1367:1608" placeholder="..." />
-            <marker date="1458329551031" expanded="true" signature="1716:2033" placeholder="..." />
-            <marker date="1458329551031" expanded="true" signature="1819:2018" placeholder="..." />
-            <marker date="1458329551031" expanded="true" signature="2133:2502" placeholder="..." />
-            <marker date="1458329551031" expanded="true" signature="2255:2487" placeholder="..." />
-            <marker date="1458329551031" expanded="true" signature="2592:2931" placeholder="..." />
-            <marker date="1458329551031" expanded="true" signature="2691:2916" placeholder="..." />
-            <marker date="1458329551031" expanded="true" signature="3020:3631" placeholder="..." />
-            <marker date="1458329551031" expanded="true" signature="3120:3616" placeholder="..." />
-            <marker date="1458329551031" expanded="true" signature="3194:3530" placeholder="..." />
-            <marker date="1458329551031" expanded="true" signature="3664:3922" placeholder="..." />
-            <marker date="1458329551031" expanded="true" signature="3716:3907" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/DataAccess/UserRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.4117646">
-          <caret line="42" column="38" selection-start-line="42" selection-start-column="38" selection-end-line="42" selection-end-column="38" />
-          <folding>
-            <marker date="1458331004227" expanded="true" signature="1623:1644" placeholder="SELECT FROM ``... " />
-            <marker date="1458331004227" expanded="true" signature="1623:1693" placeholder="SELECT FROM `users`... " />
-            <marker date="1458331004227" expanded="true" signature="1938:2002" placeholder="SELECT * FRO... users" />
+            <marker date="1459265384432" expanded="true" signature="542:577" placeholder="SELECT * FRO... ${{$this-&gt;_tableName}}" />
+            <marker date="1459265384432" expanded="true" signature="1431:1521" placeholder="SELECT * FRO... ${{$this-&gt;_tableName}}" />
+            <marker date="1459265384432" expanded="true" signature="1605:1638" placeholder="INSERT INTO `${{$this-&gt;_tableName}}`... " />
+            <marker date="1459265384432" expanded="true" signature="2170:2202" placeholder="UPDATE `${{$... " />
+            <marker date="1459265384432" expanded="true" signature="2537:2599" placeholder="DELETE FROM " />
+            <marker date="1459265384432" expanded="true" signature="2537:2617" placeholder="DELETE FROM " />
+            <marker date="1459265384432" expanded="true" signature="3556:3609" placeholder="SELECT COUNT... ${{$this-&gt;_tableName}}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/App/DataAccess/DB.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.558824">
-          <caret line="86" column="0" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
+        <state vertical-scroll-proportion="-2.9411764">
+          <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App/Views/Users/Edit.php">
+    <entry file="file://$PROJECT_DIR$/App/Controllers/HomeController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.617647">
-          <caret line="9" column="64" selection-start-line="9" selection-start-column="64" selection-end-line="9" selection-end-column="64" />
+        <state vertical-scroll-proportion="-16.5">
+          <caret line="111" column="31" selection-start-line="111" selection-start-column="31" selection-end-line="111" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App/init.php">
+    <entry file="file://$PROJECT_DIR$/App/DataAccess/SpecialityRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="-3.264706">
+          <caret line="15" column="43" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.php">
+    <entry file="file://$PROJECT_DIR$/App/Views/Home/StudentAssessments.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.558824">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/Views/__Layout.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-22.67647">
-          <caret line="54" column="0" selection-start-line="55" selection-start-column="40" selection-end-line="55" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/Core/Views/EmptyView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/Core/Views/HtmlView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.17647">
-          <caret line="57" column="37" selection-start-line="57" selection-start-column="37" selection-end-line="57" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/DataAccess/ActionRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-22.794117">
-          <caret line="31" column="10" selection-start-line="31" selection-start-column="10" selection-end-line="31" selection-end-column="10" />
+        <state vertical-scroll-proportion="0.94192797">
+          <caret line="74" column="31" selection-start-line="74" selection-start-column="31" selection-end-line="74" selection-end-column="31" />
           <folding>
-            <element signature="e#33#55#0#PHP" expanded="true" />
+            <marker date="1459268713785" expanded="true" signature="1091:1112" placeholder="..." />
+            <marker date="1459268713785" expanded="true" signature="2253:2608" placeholder="..." />
+            <marker date="1459268713785" expanded="true" signature="2353:2608" placeholder="..." />
+            <marker date="1459268713785" expanded="true" signature="2409:2570" placeholder="..." />
+            <marker date="1459268713785" expanded="true" signature="2587:2608" placeholder="..." />
+            <marker date="1459268713785" expanded="true" signature="4526:4547" placeholder="..." />
+            <marker date="1459268713785" expanded="true" signature="4938:4974" placeholder="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/DataAccess/AssessmentRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.382353">
-          <caret line="31" column="38" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/DataAccess/ControllerRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.735294">
-          <caret line="27" column="38" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/DataAccess/CourseRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.382353">
-          <caret line="27" column="38" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/DataAccess/EducationTypeRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.117647">
-          <caret line="28" column="38" selection-start-line="28" selection-start-column="38" selection-end-line="28" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/DataAccess/ManyToManyRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.7352941">
-          <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
-          <folding>
-            <marker date="1458246066977" expanded="true" signature="259:306" placeholder="SELECT * FRO... ${{$table}}" />
-            <marker date="1458246066977" expanded="true" signature="1180:1262" placeholder="DELETE FROM " />
-            <marker date="1458246066977" expanded="true" signature="1496:1593" placeholder="INSERT INTO `${{$table}}`... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/DataAccess/RoleRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.2058823">
-          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/Controllers/UsersController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.558824">
-          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/Views/Users/Index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6090487">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>

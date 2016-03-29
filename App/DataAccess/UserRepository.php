@@ -11,26 +11,24 @@ class UserRepository extends BaseRepository {
 
     protected function mapEntity($entity) {
         $result = new User();
-        $result->setId($entity->id);
-        $result->setUsername($entity->username);
-        $result->setFirstName($entity->first_name);
-        $result->setLastName($entity->last_name);
-        $result->setEmail($entity->email);
-        $result->setPassword($entity->password);
-        $result->setRoleId($entity->role_id);
+        $result->setId($entity->user_id);
+        $result->setUsername($entity->user_name);
+        $result->setFirstName($entity->user_fname);
+        $result->setLastName($entity->user_lname);
+        $result->setEmail($entity->user_email);
+        $result->setPassword($entity->user_password);
 
         return $result;
     }
 
     protected function getProperties() {
         return [
-            'id',
-            'username',
-            'first_name',
-            'last_name',
-            'email',
-            'password',
-            'role_id'
+            'user_id',
+            'user_name',
+            'user_fname',
+            'user_lname',
+            'user_email',
+            'user_password'
         ];
     }
 
@@ -40,23 +38,22 @@ class UserRepository extends BaseRepository {
      */
     protected function getKeyValues($entity) {
         return [
-            ':id' => $entity->getId(),
-            ':username' => $entity->getUsername(),
-            ':first_name' => $entity->getFirstName(),
-            ':last_name' => $entity->getLastName(),
-            ':email' => $entity->getEmail(),
-            ':password' => $entity->getPassword(),
-            ':role_id' => $entity->getRoleId()
+            ':user_id' => $entity->getId(),
+            ':user_name' => $entity->getUsername(),
+            ':user_fname' => $entity->getFirstName(),
+            ':user_lname' => $entity->getLastName(),
+            ':user_email' => $entity->getEmail(),
+            ':user_password' => $entity->getPassword()
         ];
     }
 
     public function setRolesToUser(User $user, $roles) {
-        ManyToManyRepository::setCollectionToTarget('users_roles', $user, $roles, 'user_id', 'role_id');
+        ManyToManyRepository::setCollectionToTarget('users_roles', $user, $roles, 'ru_user_id', 'ru_role_id');
     }
 
     public function getUserByUsername($username) {
-        $entity = $this->_db->query('SELECT * FROM `users` WHERE LOWER(username) = LOWER(:username) LIMIT 1', [
-            ':username' => $username
+        $entity = $this->_db->query('SELECT * FROM `users` WHERE LOWER(user_name) = LOWER(:user_name) LIMIT 1', [
+            ':user_name' => $username
         ]);
 
         if ($entity) {
@@ -67,8 +64,8 @@ class UserRepository extends BaseRepository {
     }
 
     public function getUserByEmail($email) {
-        $entity = $this->_db->query('SELECT * FROM `users` WHERE LOWER(email) = LOWER(:email) LIMIT 1', [
-            ':email' => $email
+        $entity = $this->_db->query('SELECT * FROM `users` WHERE LOWER(user_email) = LOWER(:user_email) LIMIT 1', [
+            ':user_email' => $email
         ]);
 
         if ($entity) {
