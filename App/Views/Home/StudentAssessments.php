@@ -40,7 +40,52 @@ function getGradeString($grade) {
     return 'Отличен';
 }
 ?>
-
+<div class="container">
+<form class="form-horizontal">
+    <fieldset>
+        <legend>Търсене</legend>
+        <div class="form-group">
+            <label for="fname" class="col-md-2">Име:</label>
+            <div class="col-md-10">
+                <input type="text" class="form-control" id="fname" name="student_fname" value="<?=$params['student_fname']?>">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="lname" class="col-md-2">Фамилия:</label>
+            <div class="col-md-10">
+                <input type="text" class="form-control" id="lname" name="student_lname" value="<?=$params['student_lname']?>">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="speciality" class="col-md-2">Специалност:</label>
+            <div class="col-md-10">
+                <select name="speciality_id" id="speciality" class="form-control">
+                    <option></option>
+                    <?php foreach ($specialities as $speciality) { ?>
+                        <option value="<?=$speciality->getId()?>"<?php if ($speciality->getId() == $params['speciality_id']) echo ' selected'; ?>><?=$speciality->getName()?></option>
+                    <?php } ?>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="course" class="col-md-2">Курс:</label>
+            <div class="col-md-10">
+                <select name="course_id" id="course" class="form-control">
+                    <option></option>
+                    <?php foreach($courses as $course) { ?>
+                        <option value="<?=$course->getId()?>"<?php if ($course->getId() == $params['course_id']) echo ' selected'; ?>><?=$course->getName()?></option>
+                    <?php } ?>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default">Търси</button>
+            </div>
+        </div>
+    </fieldset>
+</form>
+</div>
 <table class="table table-bordered table-hover table-striped">
     <thead>
     <tr>
@@ -59,7 +104,7 @@ function getGradeString($grade) {
         <th class="text-center">
             <a href="<?php
             $_params = $params;
-            $_params['sort'] = $params['sort'] === 'name_asc' ? 'name_desc' : 'name_asc';
+            $_params['sort'] = $params['sort'] === 'name_desc' ? 'name_asc' : 'name_desc';
             echo $html->url('studentAssessments', 'home', $_params)?>">
                 Имена <span class="glyphicon glyphicon-sort-by-alphabet<?php if ($params['sort'] === 'name_desc') echo '-alt';?>" aria-hidden="true"></span>
             </a>
@@ -140,15 +185,21 @@ function getGradeString($grade) {
 <nav>
     <ul class="pagination">
         <li>
-            <a href="<?=$html->url('studentAssessments', 'home')?>" aria-label="Previous">
+            <a href="<?=$html->url('studentAssessments', 'home', $params)?>" aria-label="Previous">
                 <span aria-hidden="true">&laquo;</span>
             </a>
         </li>
         <?php foreach ($numbers as $number) { ?>
-            <li <?php if ($number == $page) echo 'class="active"'; ?>><?=$html->link($number, 'studentAssessments', 'home', ['page' => $number]);?></li>
-        <?php } ?>
+            <li <?php if ($number == $page) echo 'class="active"';
+            $_params = $params;
+            $_params['page'] = $number;
+            ?>><?php $html->link($number, 'studentAssessments', 'home', $_params);?></li>
+        <?php }
+        $_params = $params;
+        $_params['page'] = $pages;
+        ?>
         <li>
-            <a href="<?=$html->url('studentAssessments', 'home', ['page' => $pages])?>" aria-label="Next">
+            <a href="<?=$html->url('studentAssessments', 'home', $_params)?>" aria-label="Next">
                 <span aria-hidden="true">&raquo;</span>
             </a>
         </li>

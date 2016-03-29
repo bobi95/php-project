@@ -32,6 +32,10 @@ class HomeController extends Controller {
 
         $page = Input::get('page');
         $sort = Input::get('sort');
+        $fname = Input::get('student_fname');
+        $lname = Input::get('student_lname');
+        $speciality_id = Input::get('speciality_id');
+        $course_id = Input::get('course_id');
 
         if ($sort === 'name_desc') {
             $sortType = 'DESC';
@@ -44,12 +48,56 @@ class HomeController extends Controller {
             'student_lname' => $sortType
         ];
 
+        $filter = [];
+
+        if (!empty($fname)) {
+            $filter['like'] = [
+                'student_fname' => $fname . '%'
+            ];
+        }
+
+        if (!empty($lname)) {
+            if (!isset($filter['like'])) {
+                $filter['like'] = [];
+            }
+            $filter['like']['student_lname'] = $lname . '%';
+        }
+
+        if (!empty($course_id)) {
+            $filter['='] = [
+                'student_course_id' => (int)$course_id
+            ];
+        }
+
+        if (!empty($speciality_id)) {
+            if (!isset($filter['='])) {
+                $filter['='] = [];
+            }
+            $filter['=']['student_speciality_id'] = (int)$speciality_id;
+        }
+
+        /** @var Course[] $courses */
+        $courses = (new CourseRepository())->getAll(0,0,['course_id' => 'ASC']);
+        $courseCol = [];
+
+        foreach ($courses as $course) {
+            $courseCol[$course->getId()] = $course;
+        }
+
+        /** @var Speciality[] $specialities */
+        $specialities = (new SpecialityRepository())->getAll();
+        $specialityCol = [];
+
+        foreach ($specialities as $speciality) {
+            $specialityCol[$speciality->getId()] = $speciality;
+        }
+
         $studentsRepo = new StudentRepository();
 
 
 
         /** @var Student[] $students */
-        $pagedModel = PagingService::getElements($studentsRepo, $page, 15, $sortArr);
+        $pagedModel = PagingService::getElements($studentsRepo, $page, 15, $sortArr, $filter);
         $students = $pagedModel['elements'];
 
         $saRepo = new SubjectAssessmentRepository();
@@ -82,22 +130,6 @@ student 2 =>  subject 2 => assessment 4
               subject 4 => assessment 6
  */
 
-        /** @var Course[] $courses */
-        $courses = (new CourseRepository())->getAll();
-        $courseCol = [];
-
-        foreach ($courses as $course) {
-            $courseCol[$course->getId()] = $course;
-        }
-
-        /** @var Speciality[] $specialities */
-        $specialities = (new SpecialityRepository())->getAll();
-        $specialityCol = [];
-
-        foreach ($specialities as $speciality) {
-            $specialityCol[$speciality->getId()] = $speciality;
-        }
-
         $model = [
             'students' => $students,
             'subjects' => $subjects,
@@ -109,7 +141,11 @@ student 2 =>  subject 2 => assessment 4
             'numbers' => $pagedModel['numbers'],
             'count' => $pagedModel['count'],
             'params' => [
-                'sort' => $sort
+                'sort' => $sort,
+                'student_fname' => $fname,
+                'student_lname' => $lname,
+                'course_id' => (int)$course_id,
+                'speciality_id' => (int)$speciality_id
             ]
         ];
 

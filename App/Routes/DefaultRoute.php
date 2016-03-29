@@ -89,9 +89,13 @@ class DefaultRoute extends Route {
             }
 
             if (!empty($params)) {
-                $url .= '?';
+                $data = [];
                 foreach ($params as $key => $value) {
-                    $url .= urlencode($key) . '=' . urlencode($value);
+                    if (!empty($value))
+                    $data[] = urlencode($key) . '=' . urlencode($value);
+                }
+                if (!empty($data)) {
+                    $url .= '?' . implode('&', $data);
                 }
             }
 
