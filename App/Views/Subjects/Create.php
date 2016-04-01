@@ -18,14 +18,14 @@ $subject = $model['subject'];
             </div>
         </div>
 		 <div class="form-group<?php if ($subject->getError('lectures')) echo ' has-error'; ?>">
-            <label for="lectures" class="col-md-2">Лекции (Х):</label>
+            <label for="lectures" class="col-md-2">Хорариум (Л):</label>
             <div class="col-md-10">
                 <input type="text" class="form-control" placeholder="Хорариум на лекциите" id="lectures" name="lectures" value="<?=escape($subject->getName())?>">
                 <?php $html->formError($subject->getError('lectures')) ?>
             </div>
         </div>
-		 <div class="form-group<?php if ($subject->getError('lectures')) echo ' has-error'; ?>">
-            <label for="exercises" class="col-md-2">Упражнения (Х):</label>
+		 <div class="form-group<?php if ($subject->getError('exercises')) echo ' has-error'; ?>">
+            <label for="exercises" class="col-md-2">Хорариум (У):</label>
             <div class="col-md-10">
                 <input type="text" class="form-control" placeholder="Хорариум на упражненията" id="exercises" name="exercises" value="<?=escape($subject->getName())?>">
                 <?php $html->formError($subject->getError('exercises')) ?>

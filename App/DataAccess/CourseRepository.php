@@ -7,6 +7,7 @@ class CourseRepository extends BaseRepository {
     public function __construct() {
         parent::__construct();
         $this->_tableName = 'courses';
+        $this->_idColumn = 'course_id';
     }
 
 

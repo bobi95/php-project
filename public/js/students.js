@@ -10,12 +10,13 @@ jQuery(
 			ordering	: true,
 			//autoWidth	: true,
 			columns		: [
-							{name: 'id'					, data: 'id'					, searchable: false	, orderable: true},
-							{name: 'course_id'			, data: 'course_id'				, searchable: false	, orderable: true},
-							{name: 'specialty_id'		, data: 'specialty_id'			, searchable: false	, orderable: true},
-							{name: 'education_type_id'	, data: 'education_type_id'		, searchable: false	, orderable: true},
-							{name: 'faculty_number'		, data: 'faculty_number'		, searchable: true	, orderable: true},
-							{name: 'options'			, data: 'options'				, searchable: false	, orderable: false}
+							{name: 'student_id'					, data: 'student_id'					, searchable: false	, orderable: true},
+                            {name: 'student_names'              , data: 'student_names'                 , searchable: false , orderable: false},
+							{name: 'student_fnumber'			, data: 'student_fnumber'				, searchable: true	, orderable: true},
+							{name: 'student_course_id'			, data: 'student_course_id'				, searchable: false	, orderable: true},
+							{name: 'student_speciality_id'		, data: 'student_speciality_id'			, searchable: false	, orderable: true},
+							{name: 'student_education_form'		, data: 'student_education_form'		, searchable: false	, orderable: true},
+							{name: 'options'					, data: 'options'						, searchable: false	, orderable: false}
 						]
 		});
 

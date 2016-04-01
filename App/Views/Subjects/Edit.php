@@ -19,16 +19,16 @@ $subject = $model['subject'];
             </div>
         </div>
         <div class="form-group<?php if ($subject->getError('lectures')) echo ' has-error'; ?>">
-            <label for="lectures" class="col-md-2">Лекции (Х):</label>
+            <label for="lectures" class="col-md-2">Хорариум (Л):</label>
             <div class="col-md-10">
-                <input type="text" class="form-control" placeholder="Лекции (х)" id="lectures" name="lectures" value="<?=escape($subject->getLectures())?>">
+                <input type="text" class="form-control" placeholder="Хорариум на лекциите" id="lectures" name="lectures" value="<?=escape($subject->getLectures())?>">
                 <?php $html->formError($subject->getError('name')) ?>
             </div>
         </div>
-        <div class="form-group<?php if ($subject->getError('name')) echo ' has-error'; ?>">
-            <label for="exercises" class="col-md-2">Упражнения (Х):</label>
+        <div class="form-group<?php if ($subject->getError('exercises')) echo ' has-error'; ?>">
+            <label for="exercises" class="col-md-2">Хорариум (У):</label>
             <div class="col-md-10">
-                <input type="text" class="form-control" placeholder="Упражнения (х)" id="exercises" name="exercises" value="<?=escape($subject->getExercises())?>">
+                <input type="text" class="form-control" placeholder="Хорариум на упражненията" id="exercises" name="exercises" value="<?=escape($subject->getExercises())?>">
                 <?php $html->formError($subject->getError('name')) ?>
             </div>
         </div>

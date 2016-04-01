@@ -7,6 +7,7 @@ class SubjectRepository extends BaseRepository {
     public function __construct() {
         parent::__construct();
         $this->_tableName = 'subjects';
+        $this->_idColumn = 'subject_id';
     }
 
     protected function mapEntity($entity) {

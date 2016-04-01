@@ -6,13 +6,13 @@ $viewData['title'] = 'Оценки';
 <table class="table table-hover" id="assessment-table">
     <thead>
         <tr>
-            <td>#</td>
-            <td>Факултетен номер</td>
-            <td>Предмет</td>
-            <td>Оценка</td>
-            <td>Лекции</td>
-            <td>Упражнения</td>            
-            <td>Операции</td>
+            <th>#</th>
+            <th>Факултетен номер</th>
+            <th>Предмет</th>
+            <th>Оценка</th>
+            <th>Лекции</th>
+            <th>Упражнения</th>
+            <th>Операции</th>
         </tr>
     </thead>
     <tbody>
@@ -25,13 +25,13 @@ $viewData['title'] = 'Оценки';
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Изтриване на роля</h4>
+        <h4 class="modal-title">Изтриване на оценка</h4>
       </div>
       <div class="modal-body">
-        <p>Сигурни ли сте, че искате да изтриете тази роля?</p>
+        <p>Сигурни ли сте, че искате да изтриете тази оценка?</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Цъ</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Не</button>
         <button type="button" class="btn btn-primary" id="confirm-deletion">Да</button>
       </div>
     </div><!-- /.modal-content -->

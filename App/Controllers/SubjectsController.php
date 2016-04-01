@@ -35,7 +35,7 @@ class SubjectsController extends Controller {
 
         $subjectsRepo = new SubjectRepository();
 
-        $filter = $data->hasFilter() ? ['like' => ['name' => '%' . $data->getFilter() . '%']] : [];
+        $filter = $data->hasFilter() ? ['like' => ['subject_name' => '%' . $data->getFilter() . '%']] : [];
 
         $subjects = $subjectsRepo->getAll(
             $data->getLimit(),
@@ -56,10 +56,10 @@ class SubjectsController extends Controller {
 
             // Group data
             $subjectsData[] = [
-                'id'      => $subject->getId(),
-                'name'    => $subject->getName(),
-                'lectures'    => $subject->getLectures(),
-                'exercises'    => $subject->getExercises(),
+                'subject_id'      => $subject->getId(),
+                'subject_name'    => $subject->getName(),
+                'subject_workload_lectures'    => $subject->getLectures(),
+                'subject_workload_exercises'    => $subject->getExercises(),
                 'options' => $options,
             ];
         }
@@ -99,7 +99,7 @@ class SubjectsController extends Controller {
 
         $repo = new SubjectRepository();
 
-        if ($repo->count(['like' => ['name' => $subject->getName()]]))
+        if ($repo->count(['like' => ['subject_name' => $subject->getName()]]))
         {
             $subject->setError('name', 'Дисциплина с такова име вече същестува!');
         }
@@ -135,7 +135,7 @@ class SubjectsController extends Controller {
 
         $newName = Input::post('name');
            // Check for duplicates in the DB
-        if ($newName != $subject->getName() && $repo->count(['like' => ['name' => $newName]]))
+        if ($newName != $subject->getName() && $repo->count(['like' => ['subject_name' => $newName]]))
         {
             $subject->setError('name', 'Ролята вече съществува в базата!');
         }

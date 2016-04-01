@@ -35,11 +35,11 @@ class SpecialitiesController extends Controller {
         }
 
         // Build response & send to data tables
-        $specialtiesData = [];
+        $specialitiesData = [];
 
         $specialtyRepo = new SpecialityRepository();
 
-        $filter = $data->hasFilter() ? ['like' => ['name' => '%' . $data->getFilter() . '%']] : [];
+        $filter = $data->hasFilter() ? ['like' => ['speciality_name_long' => '%' . $data->getFilter() . '%']] : [];
 
         $specialties = $specialtyRepo->getAll(
             $data->getLimit(),
@@ -55,15 +55,15 @@ class SpecialitiesController extends Controller {
         {
             // Options
             $options = '';
-            $options .= '<a href="' . $htmlHelper->url('edit', 'specialties', ['id' => $specialty->getId()]) . '">Редактирай</а> ';
-            $options .= '<a class="delete-button" href="javascript:void(0);" data-href="' . $htmlHelper->url('delete', 'specialties', ['id' => $specialty->getId()]) . '">Изтриване</а>';
+            $options .= '<a href="' . $htmlHelper->url('edit', 'specialities', ['id' => $specialty->getId()]) . '">Редактирай</а> ';
+            $options .= '<a class="delete-button" href="javascript:void(0);" data-href="' . $htmlHelper->url('delete', 'specialities', ['id' => $specialty->getId()]) . '">Изтриване</а>';
 
             // Group data
-            $specialtiesData[] = [
-                'id'          => $specialty->getId(),
-                'name'	      => $specialty->getName(),
-                'short_name'  => $specialty->getShortName(),
-                'options'     => $options
+            $specialitiesData[] = [
+                'speciality_id'               => $specialty->getId(),
+                'speciality_name_long'	      => $specialty->getName(),
+                'speciality_name_short'       => $specialty->getShortName(),
+                'options'                     => $options
             ];
         }
 
@@ -73,7 +73,7 @@ class SpecialitiesController extends Controller {
             'draw'				=> $data->getRequestId(),
             'recordsTotal'		=> $count,
             'recordsFiltered'	=> $count,
-            'data'				=> $specialtiesData,
+            'data'				=> $specialitiesData,
         ];
 
         echo json_encode($response);
@@ -101,7 +101,7 @@ class SpecialitiesController extends Controller {
 
         $repo->save($model);
 
-        return $this->redirectToAction('index', 'specialties');
+        return $this->redirectToAction('index', 'specialities');
     }
 
     public function edit($id) {
@@ -116,7 +116,7 @@ class SpecialitiesController extends Controller {
             $model = $repo->getById($id);
 
             if (!$model) {
-                return $this->redirectToAction('index', 'specialties');
+                return $this->redirectToAction('index', 'specialities');
             }
 
             return $this->view(['specialty' => $model]);
@@ -132,12 +132,12 @@ class SpecialitiesController extends Controller {
         $specialty = $repo->getById($model->getId());
 
         if (!$specialty) {
-            return $this->redirectToAction('index', 'specialties');
+            return $this->redirectToAction('index', 'specialities');
         }
 
         $repo->save($model);
 
-        return $this->redirectToAction('index', 'specialties');
+        return $this->redirectToAction('index', 'specialities');
     }
 
     public function delete($id) {
@@ -152,12 +152,12 @@ class SpecialitiesController extends Controller {
         $specialty = $repo->getById($id);
 
         if (!$specialty) {
-            return $this->redirectToAction('index', 'specialties');
+            return $this->redirectToAction('index', 'specialities');
         }
 
         $repo->delete($specialty);
 
-        return $this->redirectToAction('index', 'specialties');
+        return $this->redirectToAction('index', 'specialities');
     }
 
     private static function bindSpecialties(Speciality $entity) {

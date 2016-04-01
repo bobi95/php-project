@@ -7,6 +7,7 @@ class AssessmentRepository extends BaseRepository {
     public function __construct() {
         parent::__construct();
         $this->_tableName = 'students_assessments';
+        $this->_idColumn = 'sa_id';
     }
 
     protected function mapEntity($entity) {
@@ -14,14 +15,14 @@ class AssessmentRepository extends BaseRepository {
         $result->setId($entity->sa_id);
         $result->setStudentId($entity->sa_student_id);
         $result->setSubjectId($entity->sa_subject_id);
-        $result->setAssessment($entity->sa_assessment);
+        $result->setAssessment($entity->sa_assesment);
         $result->setLectures($entity->sa_workload_lectures);
         $result->setExercises($entity->sa_workload_exercises);
         return $result;
     }
 
     protected function getProperties() {
-        return ['sa_id', 'sa_student_id', 'sa_subject_id', 'sa_assessment', 'sa_workload_lectures', 'sa_workload_exercises'];
+        return ['sa_id', 'sa_student_id', 'sa_subject_id', 'sa_assesment', 'sa_workload_lectures', 'sa_workload_exercises'];
     }
 
 
@@ -34,7 +35,7 @@ class AssessmentRepository extends BaseRepository {
             ':sa_id' => $entity->getId(),
             ':sa_student_id' => $entity->getStudentId(),
             ':sa_subject_id' => $entity->getSubjectId(),
-            ':sa_assessment' => $entity->getAssessment(),
+            ':sa_assesment' => $entity->getAssessment(),
             ':sa_workload_lectures' => $entity->getLectures(),
             ':sa_workload_exercises' => $entity->getExercises()
         ];

@@ -7,6 +7,7 @@ class SpecialityRepository extends BaseRepository {
     public function __construct() {
         parent::__construct();
         $this->_tableName = 'specialities';
+        $this->_idColumn = 'speciality_id';
     }
 
 

@@ -6,9 +6,9 @@ $viewData['title'] = 'Курсове';
 <table class="table table-hover" id="course-table">
     <thead>
         <tr>
-            <td>#</td>
-            <td>Име</td>
-            <td>Операции</td>
+            <th>#</th>
+            <th>Име</th>
+            <th>Операции</th>
         </tr>
     </thead>
     <tbody>
@@ -25,7 +25,7 @@ $viewData['title'] = 'Курсове';
         <h4 class="modal-title">Изтриване на курс</h4>
       </div>
       <div class="modal-body">
-        <p>Сигурни ли сте, че искате да изтриете тази курс?</p>
+        <p>Сигурни ли сте, че искате да изтриете този курс?</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Не</button>

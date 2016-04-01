@@ -10,13 +10,13 @@ jQuery(
 			ordering	: true,
 			//autoWidth	: true,
 			columns		: [
-							{name: 'id'			, data: 'id'			, searchable: false	, orderable: true},
-							{name: 'student_id'	, data: 'student_id'	, searchable: false	, orderable: true},
-							{name: 'subject_id'	, data: 'subject_id'	, searchable: false	, orderable: true},
-							{name: 'grade'		, data: 'grade'			, searchable: false	, orderable: true},
-							{name: 'lectures'	, data: 'lectures'		, searchable: false	, orderable: true},
-							{name: 'exercises'	, data: 'exercises'		, searchable: false	, orderable: true},
-							{name: 'options'	, data: 'options'		, searchable: false	, orderable: false}
+							{name: 'sa_id'					, data: 'sa_id'						, searchable: false	, orderable: true},
+							{name: 'sa_student_id'			, data: 'sa_student_id'				, searchable: true	, orderable: true},
+							{name: 'sa_subject_id'			, data: 'sa_subject_id'				, searchable: false	, orderable: true},
+							{name: 'sa_assesment'			, data: 'sa_assesment'				, searchable: false	, orderable: true},
+							{name: 'sa_workload_lectures'	, data: 'sa_workload_lectures'		, searchable: false	, orderable: true},
+							{name: 'sa_workload_exercises'	, data: 'sa_workload_exercises'		, searchable: false	, orderable: true},
+							{name: 'options'				, data: 'options'					, searchable: false	, orderable: false}
 						]
 		});
 

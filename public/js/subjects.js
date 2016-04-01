@@ -10,11 +10,11 @@ jQuery(
 			ordering	: true,
 			//autoWidth	: true,
 			columns		: [
-							{name: 'id'			, data: 'id'			, searchable: false	, orderable: true},
-							{name: 'name'		, data: 'name'			, searchable: true	, orderable: true},
-							{name: 'lectures'	, data: 'lectures'		, searchable: true	, orderable: true},
-							{name: 'exercises'	, data: 'exercises'		, searchable: true	, orderable: true},
-							{name: 'options'	, data: 'options'		, searchable: false	, orderable: false}
+							{name: 'subject_id'					, data: 'subject_id'					, searchable: false	, orderable: true},
+							{name: 'subject_name'				, data: 'subject_name'					, searchable: true	, orderable: true},
+							{name: 'subject_workload_lectures'	, data: 'subject_workload_lectures'		, searchable: true	, orderable: true},
+							{name: 'subject_workload_exercises'	, data: 'subject_workload_exercises'	, searchable: true	, orderable: true},
+							{name: 'options'					, data: 'options'						, searchable: false	, orderable: false}
 						]
 		});
 

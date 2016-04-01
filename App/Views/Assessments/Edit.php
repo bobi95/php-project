@@ -20,7 +20,7 @@ $assessment = $model['assessment'];
                         <option value="<?=$item->getId()?>"<?php if ($item->getId() === $student_id) echo " selected"; ?>><?=$item->getFacultyNumber()?></option>
                     <?php } ?>
                 </select>
-                <?php $html->formError($assessment->getError('students')) ?>
+                <?php $html->formError($assessment->getError('student_id')) ?>
             </div>
         </div>
         <div class="form-group<?php if ($assessment->getError('subject_id')) echo ' has-error'; ?>">
@@ -40,27 +40,27 @@ $assessment = $model['assessment'];
         <div class="form-group<?php if ($assessment->getError('grade')) echo ' has-error'; ?>">
             <label for="grade" class="col-md-2">Оценка:</label>
             <div class="col-md-10">
-                <input type="text" class="form-control" placeholder="Потребителско име" id="grade" name="grade" value="<?=escape($assessment->getAssessment())?>">
+                <input type="text" class="form-control" placeholder="Оценка" id="grade" name="grade" value="<?=escape($assessment->getAssessment())?>">
                 <?php $html->formError($assessment->getError('grade')) ?>
             </div>
         </div>
         <div class="form-group<?php if ($assessment->getError('lectures')) echo ' has-error'; ?>">
             <label for="lectures" class="col-md-2">Лекции:</label>
             <div class="col-md-10">
-                <input type="text" class="form-control" placeholder="Потребителско име" id="lectures" name="lectures" value="<?=escape($assessment->getLectures())?>">
+                <input type="text" class="form-control" placeholder="Лекции" id="lectures" name="lectures" value="<?=escape($assessment->getLectures())?>">
                 <?php $html->formError($assessment->getError('lectures')) ?>
             </div>
         </div>
         <div class="form-group<?php if ($assessment->getError('exercises')) echo ' has-error'; ?>">
             <label for="exercises" class="col-md-2">Упражнения:</label>
             <div class="col-md-10">
-                <input type="text" class="form-control" placeholder="Потребителско име" id="exercises" name="exercises" value="<?=escape($assessment->getExercises())?>">
+                <input type="text" class="form-control" placeholder="Упражнения" id="exercises" name="exercises" value="<?=escape($assessment->getExercises())?>">
                 <?php $html->formError($assessment->getError('exercises')) ?>
             </div>
         </div>
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
-                <a class="btn btn-default" >Откажи</a>
+                <a class="btn btn-default" href="<?=$html->url('index', 'assessments')?>">Откажи</a>
                 <input type="submit" class="btn btn-default" value="Редактирай">
             </div>
         </div>

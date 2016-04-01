@@ -64,12 +64,14 @@ abstract class BaseRepository {
             $values = [];
             $columns = [];
 
-            $idKey = ':' . $this->_idColumn;
             foreach ($properties as $prop) {
-                if ($prop === $idKey) continue;
+                if ($prop === $this->_idColumn) continue;
                 $values[] = ':'. $prop;
                 $columns[] = $prop;
             }
+
+            var_dump_pre($properties);
+//            var_dump_pre($columns);
 
             $sql .= '(' . implode(', ', $columns) .') VALUES (' . implode(', ', $values) . ')';
         }
@@ -83,13 +85,13 @@ abstract class BaseRepository {
         $props = [];
 
         foreach ($properties as $prop) {
-            if($prop !== 'id') {
+            if($prop !== $this->_idColumn) {
                 $props[] = "{$prop} = :{$prop}";
             }
         }
 
         $sql .= implode(', ', $props);
-        $sql .= " WHERE id = :id";
+        $sql .= " WHERE {$this->_idColumn} = :{$this->_idColumn}";
 
         return $sql;
     }

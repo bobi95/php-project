@@ -174,7 +174,11 @@ function getGradeString($grade) {
             ?>
             <td><?=$lectures?> (<?=$maxLectures?>)</td>
             <td><?=$exercises?> (<?=$maxExercises?>)</td>
-            <td><?=getGradeString($gradeSum / $gradeCount);?> (<?=round($gradeSum / $gradeCount, 2)?>)</td>
+            <td><?php
+                if ($gradeCount) {
+                    echo getGradeString($gradeSum / $gradeCount);
+                ?> (<?=round($gradeSum / $gradeCount, 2)?>)<?php
+                } ?></td>
         </tr>
     <?php } ?>
     </tbody>

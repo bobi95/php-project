@@ -10,10 +10,10 @@ jQuery(
 			ordering	: true,
 			//autoWidth	: true,
 			columns		: [
-							{name: 'speciality_id'				, data: 'speciality_id'			, searchable: false	, orderable: true},
-							{name: 'speciality_name_long'		, data: 'speciality_name_long' , searchable: true	, orderable: true},
-							{name: 'speciality_name_short'		, data: 'speciality_name_short'	, searchable: true  , orderable: true},
-							{name: 'options'					, data: 'options'		, searchable: false	, orderable: false}
+							{name: 'speciality_id'				, data: 'speciality_id'				, searchable: false	, orderable: true},
+							{name: 'speciality_name_long'		, data: 'speciality_name_long' 		, searchable: true	, orderable: true},
+							{name: 'speciality_name_short'		, data: 'speciality_name_short'		, searchable: true  , orderable: true},
+							{name: 'options'					, data: 'options'					, searchable: false	, orderable: false}
 						]
 		});
 

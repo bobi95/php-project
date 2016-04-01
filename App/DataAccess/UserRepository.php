@@ -7,6 +7,7 @@ class UserRepository extends BaseRepository {
     public function __construct() {
         parent::__construct();
         $this->_tableName = 'users';
+        $this->_idColumn = 'user_id';
     }
 
     protected function mapEntity($entity) {
@@ -48,7 +49,7 @@ class UserRepository extends BaseRepository {
     }
 
     public function setRolesToUser(User $user, $roles) {
-        ManyToManyRepository::setCollectionToTarget('users_roles', $user, $roles, 'ru_user_id', 'ru_role_id');
+        ManyToManyRepository::setCollectionToTarget('roles_users', $user, $roles, 'ru_user_id', 'ru_role_id');
     }
 
     public function getUserByUsername($username) {

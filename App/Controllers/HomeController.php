@@ -17,14 +17,12 @@ use App\Services\PagingService;
 class HomeController extends Controller {
 
     public function Index() {
-        if (!AuthenticationService::isUserLogged()) {
+
+        if (AuthorizationService::requireRole('admin')) {
+            return $this->redirectToAction('studentAssessments');
+        } else if (!AuthenticationService::isUserLogged()) {
             return $this->redirectToAction('login', 'account');
         }
-
-        if (AuthorizationService::requireRole('administrator')) {
-            return $this->redirectToAction('studentAssessments');
-        }
-
         return $this->view();
     }
 

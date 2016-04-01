@@ -16,15 +16,15 @@ $specialty = $model['specialty'];
             </div>
         </div>
         <div class="form-group<?php if ($specialty->getError('short_name')) echo ' has-error'; ?>">
-            <label for="short_name" class="col-md-2">Късо име:</label>
+            <label for="short_name" class="col-md-2">Абревиатура:</label>
             <div class="col-md-10">
-                <input type="text" class="form-control" placeholder="Късо име" id="short_name" name="short_name" value="<?=escape($specialty->getShortName())?>">
+                <input type="text" class="form-control" placeholder="Абревиатура" id="short_name" name="short_name" value="<?=escape($specialty->getShortName())?>">
                 <?php $html->formError($specialty->getError('short_name')) ?>
             </div>
         </div>
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
-                <a class="btn btn-default" href="<?=$html->url('index', 'specialties')?>">Откажи</a>
+                <a class="btn btn-default" href="<?=$html->url('index', 'specialities')?>">Откажи</a>
                 <input type="submit" class="btn btn-default" value="Редактирай">
             </div>
         </div>

@@ -16,7 +16,7 @@ $course = $model['course'];
 	  	</div>
 	  	<div class="form-group">
 		  	<div class="col-sm-offset-2 col-sm-10">
-		  		<a class="btn btn-default">Откажи</a>
+		  		<a class="btn btn-default" href="<?=$html->url('index', 'courses')?>">Откажи</a>
 		  		<input type="submit" class="btn btn-default" value="Добави">
 		  	</div>
 	  	</div>

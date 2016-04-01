@@ -1,14 +1,14 @@
 <?php
 $viewData['title'] = 'Специалности';
 ?>
-    <h3>Специалности</h3> <?php $html->link('Добави специалност', 'create', 'specialties') ?>
+    <h3>Специалности</h3> <?php $html->link('Добави специалност', 'create', 'specialities') ?>
     <hr>
     <table class="table table-hover" id="specialties-table">
         <thead>
         <tr>
             <th>#</th>
             <th>Име</th>
-            <th>Кратко име</th>
+            <th>Абревиатура</th>
             <th>Операции</th>
         </tr>
         </thead>
@@ -37,5 +37,5 @@ $viewData['title'] = 'Специалности';
 <?php
 
 $sections['scripts-bottom'] = function(){
-    echo '<script src="/js/specialties.js"></script>';
+    echo '<script src="/js/specialities.js"></script>';
 };

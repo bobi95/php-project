@@ -6,6 +6,7 @@ use App\DataAccess\RoleRepository;
 use App\Helpers\DataTablesParser;
 use App\Helpers\Hash;
 use App\Helpers\Html;
+use App\Models\Role;
 use App\Models\User;
 use App\Models\Address;
 use App\Models\Note;
@@ -40,7 +41,7 @@ class UsersController extends Controller {
 
         $userRepo = new UserRepository();
 
-        $filter = $data->hasFilter() ? ['like' => ['username' => '%' . $data->getFilter() . '%']] : [];
+        $filter = $data->hasFilter() ? ['like' => ['user_name' => '%' . $data->getFilter() . '%']] : [];
 
         $users = $userRepo->getAll(
             $data->getLimit(),
@@ -57,15 +58,21 @@ class UsersController extends Controller {
             // Options
             $options = '';
             $options .= '<a href="' . $htmlHelper->url('edit', 'users', ['id' => $user->getId()]) . '">Редактирай</а> ';
-            $options .= '<a href="' . $htmlHelper->url('delete', 'users', ['id' => $user->getId()]) . '">Изтриване</а>';
+            $options .= '<a class="delete-button" href="javascript:void(0);" data-href="' . $htmlHelper->url('delete', 'users', ['id' => $user->getId()]) . '">Изтриване</а>';
+
+            $roles = $user->getRoles();
+            $roleNames = [];
+            foreach ($roles as $role) {
+                $roleNames[] = $role->getName();
+            }
 
             // Group data
             $usersData[] = [
-                'id'          => $user->getId(),
-                'username'	  => $user->getUsername(),
-                'email'		  => $user->getEmail(),
-                'role_id'	  => $user->getRole()->getName(),
-                'options'     => $options,
+                'user_id'           => $user->getId(),
+                'user_name'	        => $user->getUsername(),
+                'user_email'	    => $user->getEmail(),
+                'user_role_id'	    => implode(', ', $roleNames),
+                'options'           => $options,
             ];
         }
 
@@ -109,7 +116,6 @@ class UsersController extends Controller {
 
         $user = $repo->getUserByUsername($model->getUsername());
 
-
         if ($user) {
             $model->setError('username', 'Username already in use.');
         }
@@ -126,8 +132,20 @@ class UsersController extends Controller {
 
         $model->setPassword(Hash::create($model->getPassword()));
 
+        $userRoles = [];
+        $setRoles = Input::post('role_ids');
+
+        /** @var Role $role */
+        foreach ($roles as $role) {
+            if(in_array($role->getId(), $setRoles)) {
+                $userRoles[] = $role;
+            }
+        }
+
         $model->setId(0);
         $repo->save($model);
+
+        $repo->setRolesToUser($model, $userRoles);
 
         return $this->redirectToAction('index', 'users');
     }
@@ -170,17 +188,17 @@ class UsersController extends Controller {
         }
 
         if ($model->getUsername() !== $user->getUsername()) {
-            $newuser = $repo->getUserByUsername($model->getUsername());
+            $newUser = $repo->getUserByUsername($model->getUsername());
 
-            if ($newuser) {
+            if ($newUser) {
                 $model->setError('username', 'Username already in use');
             }
         }
 
         if ($model->getEmail() !== $user->getEmail()) {
-            $newuser = $repo->getUserByEmail($model->getEmail());
+            $newUser = $repo->getUserByEmail($model->getEmail());
 
-            if ($newuser) {
+            if ($newUser) {
                 $model->setError('email', 'Email already in use');
             }
         }
@@ -194,7 +212,20 @@ class UsersController extends Controller {
         }
 
         $model->setPassword($user->getPassword());
+
+        $userRoles = [];
+        $setRoles = Input::post('role_ids');
+
+        /** @var Role $role */
+        foreach ($roles as $role) {
+            if(in_array($role->getId(), $setRoles)) {
+                $userRoles[] = $role;
+            }
+        }
+
         $repo->save($model);
+
+        $repo->setRolesToUser($model, $userRoles);
 
         return $this->redirectToAction('index', 'users');
     }
@@ -212,39 +243,23 @@ class UsersController extends Controller {
         $model->setEmail(Input::post('email'));
     }
 
-//    public function Create() {
-//        $model = new User();
-//
-//        $session = Session::instance();
-//
-//        if ($this->context()->requestMethod() !== 'POST') {
-//            return $this->view($model);
-//        }
-//        self::bindUser($model);
-//
-//        $model->isValid();
-//        $userRepo = new UserRepository();
-//
-//        if(!$model->getError('username')) {
-//            $user = $userRepo->getByUsername($model->getUsername());
-//
-//            if($user) {
-//                $model->setError('username', 'Username already in use.');
-//            }
-//        }
-//
-//        if(!$model->getError('email')) {
-//            $user = $userRepo->getByEmail($model->getEmail());
-//
-//            if($user) {
-//                $model->setError('email', 'Email already in use.');
-//            }
-//        }
-//
-//        if(empty($model->getAllErrors())) {
-//            return $this->redirectToAction('Index');
-//        }
-//
-//        return $this->view($model);
-//    }
+    public function delete($id)
+    {
+        if (!AuthenticationService::isUserLogged()) {
+            return $this->redirectToAction('login', 'account');
+        }
+
+        $repo = new UserRepository();
+
+        /** @var User $user */
+        $user = $repo->getById($id);
+
+        if (!$user) {
+            return $this->redirectToAction('index', 'users');
+        }
+
+        $repo->delete($user);
+
+        return $this->redirectToAction('index', 'users');
+    }
 }

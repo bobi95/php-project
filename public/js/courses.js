@@ -10,9 +10,9 @@ jQuery(
 			ordering	: true,
 			//autoWidth	: true,
 			columns		: [
-							{name: 'id'			, data: 'id'			, searchable: false	, orderable: true},
-							{name: 'name'		, data: 'name'			, searchable: true	, orderable: true},							
-							{name: 'options'	, data: 'options'		, searchable: false	, orderable: false}
+							{name: 'course_id'			, data: 'course_id'			, searchable: false	, orderable: true},
+							{name: 'course_name'		, data: 'course_name'		, searchable: true	, orderable: true},
+							{name: 'options'			, data: 'options'			, searchable: false	, orderable: false}
 						]
 		});
 

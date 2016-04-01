@@ -57,13 +57,13 @@ class AssessmentsController extends Controller {
 
             // Group data
             $assessmentsData[] = [
-                'id'         => $assessment->getId(),
-                'student_id' => $studentsRepo->getById($assessment->getStudentId())->getFacultyNumber(),
-                'subject_id' => $subjectRepo->getById($assessment->getSubjectId())->getName(),
-                'grade'      => $assessment->getAssessment(),
-                'lectures'   => $assessment->getLectures(),
-                'exercises'  => $assessment->getExercises(),
-                'options'    => $options,
+                'sa_id'                  => $assessment->getId(),
+                'sa_student_id'          => $studentsRepo->getById($assessment->getStudentId())->getFacultyNumber(),
+                'sa_subject_id'          => $subjectRepo->getById($assessment->getSubjectId())->getName(),
+                'sa_assesment'           => $assessment->getAssessment(),
+                'sa_workload_lectures'   => $assessment->getLectures(),
+                'sa_workload_exercises'  => $assessment->getExercises(),
+                'options'                => $options,
             ];
         }
 
@@ -100,7 +100,7 @@ class AssessmentsController extends Controller {
 
         $assessment->setStudentId(Input::post('student_id'));
         $assessment->setSubjectId(Input::post('subject_id'));
-        $assessment->setAssessment(Input::post('grade'));
+        $assessment->setAssessment(Input::post('assessment'));
         $assessment->setLectures(Input::post('lectures'));
         $assessment->setExercises(Input::post('exercises'));
 
@@ -109,6 +109,21 @@ class AssessmentsController extends Controller {
         }
 
         $repo = new AssessmentRepository();
+
+
+        /** @var Assessment[] $otherAssessments */
+        $otherAssessments = $repo->getAll(1,0,[],[
+            '=' => [
+                'sa_student_id' => $assessment->getStudentId(),
+                'sa_subject_id' => $assessment->getSubjectId()
+            ]
+        ]);
+
+        if ($otherAssessments) {
+            $assessment->setError('student_id', "Student already has an assessment ({$otherAssessments[0]->getAssessment()})");
+            $models['assessment'] = $assessment;
+            return $this->view($models);
+        }
 
         $assessment->setId(0);
         $repo->save($assessment);
@@ -143,7 +158,7 @@ class AssessmentsController extends Controller {
 
         $assessment->setStudentId(Input::post('student_id'));
         $assessment->setSubjectId(Input::post('subject_id'));
-        $assessment->setAssessment(Input::post('grade'));
+        $assessment->setAssessment(Input::post('assessment'));
         $assessment->setLectures(Input::post('lectures'));
         $assessment->setExercises(Input::post('exercises'));
 

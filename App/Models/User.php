@@ -96,11 +96,5 @@ class User extends BaseModel {
         } else {
             $this->setError('password', NULL);
         }
-
-        if (empty($this->role_id)) {
-            $this->setError('role_id', 'Role id is required.');
-        } else {
-            $this->setError('role_id', NULL);
-        }
     }
 }

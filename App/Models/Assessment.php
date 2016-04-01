@@ -63,6 +63,8 @@ class Assessment extends BaseModel {
 
         if(empty($this->assessment)) {
             $this->setError('assessment', 'Assessment is required.');
+        } else if($this->assessment > 6 || $this->assessment < 2) {
+            $this->setError('assessment', 'Assessment must be between 2 and 6.');
         } else {
             $this->setError('assessment', NULL);
         }

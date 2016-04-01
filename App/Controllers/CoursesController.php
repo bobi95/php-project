@@ -42,7 +42,7 @@ class CoursesController extends Controller {
 
         $courseRepo = new CourseRepository();
 
-        $filter = $data->hasFilter() ? ['like' => ['name' => '%' . $data->getFilter() . '%']] : [];
+        $filter = $data->hasFilter() ? ['like' => ['course_name' => '%' . $data->getFilter() . '%']] : [];
 
         $courses = $courseRepo->getAll(
             $data->getLimit(),
@@ -63,9 +63,9 @@ class CoursesController extends Controller {
 
             // Group data
             $coursesData[] = [
-                'id'          => $course->getId(),
-                'name'	      => $course->getName(),
-                'options'     => $options,
+                'course_id'           => $course->getId(),
+                'course_name'	      => $course->getName(),
+                'options'             => $options,
             ];
         }
 
@@ -102,7 +102,7 @@ class CoursesController extends Controller {
 
         $repo = new CourseRepository();
 
-        if ($repo->count(['like' => ['name' => $course->getName()]]))
+        if ($repo->count(['like' => ['course_name' => $course->getName()]]))
         {
             $course->setError('name', 'Курс с такова име вече същестува!');
         }

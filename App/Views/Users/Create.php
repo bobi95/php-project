@@ -52,14 +52,27 @@ $user = $model['user'];
         <div class="form-group<?php if ($user->getError('role')) echo ' has-error'; ?>">
             <label for="role_id" class="col-md-2">Роля:</label>
             <div class="col-md-10">
-                <select name="role_id" id="role_id" class="form-control">
                     <?php
-                    $role_id = $user->getRoleId();
+                    /** @var \App\Models\Role[] $roles */
+                    $roles = $user->getRoles();
+
+                    $roleIds = [];
+                    foreach($roles as $role) {
+                        $roleIds[$role->getId()] = true;
+                    }
+
+                    /** @var \App\Models\Role $role */
                     foreach ($model['roles'] as $role) { ?>
-                    <option value="<?=$role->getId()?>"<?php if ($role->getId() === $role_id) echo " selected"; ?>><?=$role->getName()?></option>
-                <?php } ?>
-                </select>
-                <?php $html->formError($user->getError('role_id')) ?>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="role_ids[]" value="<?=$role->getId()?>" <?php if (isset($roleIds[$role->getId()])) echo 'checked'; ?>>
+                                <?=$role->getName()?>
+                            </label>
+                        </div>
+                <?php
+                    }
+                    $html->formError($user->getError('role_id'));
+                    ?>
             </div>
         </div>
         <div class="form-group">
