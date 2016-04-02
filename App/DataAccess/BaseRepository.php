@@ -19,15 +19,16 @@ abstract class BaseRepository {
     protected abstract function getProperties();
     protected abstract function getKeyValues($entity);
 
-    protected function getAllQuery($take = 0, $offset = 0, $sort = [], $filters = []) {
+    protected function getAllQuery($take = 0, $offset = 0, $sort = [], $filters = [], $joins = []) {
         return "SELECT * FROM `{$this->_tableName}`" .
+        self::getJoins($joins) .
         $this->getFilterSection($filters) .
         $this->getOrderSection($sort) .
         self::getLimitSection($take, $offset);
     }
 
-    public function getAll($take = 0, $offset = 0, $sort = [], $filters = []) {
-        $entities = $this->_db->queryAll($this->getAllQuery($take, $offset, $sort, $filters));
+    public function getAll($take = 0, $offset = 0, $sort = [], $filters = [], $joins = []) {
+        $entities = $this->_db->queryAll($this->getAllQuery($take, $offset, $sort, $filters, $joins));
         $result = [];
 
         if(!empty($entities)) {
@@ -130,8 +131,8 @@ abstract class BaseRepository {
         ]);
     }
 
-    public function count($filter = []) {
-        $sql = "SELECT COUNT(*) AS `count` FROM `{$this->_tableName}`" . self::getFilterSection($filter);
+    public function count($filter = [], $joins = []) {
+        $sql = "SELECT COUNT(*) AS `count` FROM `{$this->_tableName}`" . self::getJoins($joins) . self::getFilterSection($filter);
         $result = $this->_db->query($sql);
         return (int)$result->count;
     }
@@ -219,6 +220,48 @@ abstract class BaseRepository {
         return ' WHERE ' . implode(' AND ', $filters);
     }
 
+    protected static function getJoinOns($filter = []) {
+        $filters = [];
+
+        if (isset($filter['like'])) {
+            foreach($filter['like'] as $k => $v) {
+                $filters[] = "{$k} LIKE {$v}";
+            }
+        }
+
+        if (isset($filter['>'])) {
+            foreach($filter['>'] as $k => $v) {
+                $filters[] = "{$k} > {$v}";
+            }
+        }
+
+        if (isset($filter['<'])) {
+            foreach($filter['<'] as $k => $v) {
+                $filters[] = "{$k} < {$v}";
+            }
+        }
+
+        if (isset($filter['>='])) {
+            foreach($filter['>='] as $k => $v) {
+                $filters[] = "{$k} >= {$v}";
+            }
+        }
+
+        if (isset($filter['<='])) {
+            foreach($filter['<='] as $k => $v) {
+                $filters[] = "{$k} <= {$v}";
+            }
+        }
+
+        if (isset($filter['='])) {
+            foreach($filter['='] as $k => $v) {
+                $filters[] = "{$k} = {$v}";
+            }
+        }
+
+        return implode(' AND ', $filters);
+    }
+
     protected function getOrderSection($sort = []) {
 
         if (empty($sort)) {
@@ -232,5 +275,18 @@ abstract class BaseRepository {
         }
 
         return ' ORDER BY ' . implode(', ', $sorts);
+    }
+
+    protected static function getJoins($joins = []) {
+
+        if (empty($joins)) return '';
+
+        $sql = '';
+
+        foreach($joins as $table => $ons) {
+            $sql .= " JOIN `{$table}` ON " . self::getJoinOns($ons);
+        }
+
+        return $sql;
     }
 }

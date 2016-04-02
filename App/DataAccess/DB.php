@@ -75,7 +75,7 @@ class DB {
     // 2 - all
     private function _query($sql, $params = [], $type = 0) {
         $this->_error = false;
-//var_dump_pre($sql);
+//        var_dump_pre($sql);
         $query = $this->_pdo->prepare($sql);
         if($query) {
 

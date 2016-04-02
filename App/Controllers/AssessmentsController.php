@@ -38,11 +38,25 @@ class AssessmentsController extends Controller {
         $studentsRepo = new StudentRepository();
         $subjectRepo = new SubjectRepository();
 
+        $filter = $data->hasFilter() ? [
+            'like' => [
+                'student_fnumber' => $data->getFilter() . '%'
+            ]
+        ] : [];
+
+        $joins = [
+            'students' => [
+                '=' => [
+                    'student_id' => 'sa_student_id'
+                ]
+            ]
+        ];
+
         $assessments = $assessmentsRepo->getAll(
             $data->getLimit(),
             $data->getOffset(),
             $data->getOrders(),
-            []
+            $filter,$joins
         );
 
         $htmlHelper = new Html();
@@ -67,7 +81,7 @@ class AssessmentsController extends Controller {
             ];
         }
 
-        $count = $assessmentsRepo->count();
+        $count = $assessmentsRepo->count($filter, $joins);
 
         $response = [
             'draw'              => $data->getRequestId(),
